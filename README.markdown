@@ -1,12 +1,17 @@
 # EXIF Lens Chooser
 
-A droplet Mac application created with [Automator](http://developer.apple.com/library/mac/#documentation/AppleApplications/Conceptual/AutomatorConcepts/Automator.html) that updates EXIF fields in image files.  When images are dropped onto the app, a dialog appears with a list of (user defined) lenses.  Select a lens, choose *OK*, and the EXIF data associated with that option will be written into all the dropped image files using [exiftool](http://www.sno.phy.queensu.ca/~phil/exiftool/index.html), which must be installed on the system.  When the processing is complete, a growl message with the results is given.
+When images are dropped onto the app, a dialog appears with a list of (user defined) lenses.  Select a lens, choose *OK*, and the EXIF data associated with that option will be written into all the dropped image files using [exiftool](http://www.sno.phy.queensu.ca/~phil/exiftool/index.html), which must be installed on the system.  When the processing is complete, a growl message with the results is given.
 
-## Prerequisite
+
+## Prerequisites
 
 Before using this application, you must first download and install [exiftool](http://www.sno.phy.queensu.ca/~phil/exiftool/index.html).
 
 The application also assumes Growl's [growlnotify](http://growl.info/extras.php#growlnotify) is installed, as it provides a message when the processing is complete.
+
+## Installation
+
+[Download](https://github.com/brianbillman/exif-lens-chooser/zipball/master) the zip file, and move  *EXIF Lens Chooser.app* to your `/Applications/` directory.
 
 ## How I Use It
 
@@ -50,6 +55,16 @@ Open the app in Automator, and you should see 6 collapsable sections.  The ones 
                 -EffectiveMaxAperture='3.5' \
                 "
 
-## Other
+## Testing
+
+You can see all the EXIF info any image file has by running in Terminal (useful for before/after comparisons to validate your changes, and to compare with other CPU lenses to see what the camera sets for them):
+
+    $ exiftool path/to/file/image.jpg
+
+If you filter the output to only show certain text, you can run:
+
+    $ exiftool path/to/file/image.jpg | grep -i "TextToFind"        
+
+## Other 
 
 If you have any ideas for how to improve this app, please create a ticket github issue for it and I'll take a look (or fork it and do it yourself!) 
