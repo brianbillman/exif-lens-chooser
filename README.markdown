@@ -24,14 +24,15 @@ Open the app in Automator, and you should see 6 collapsable sections.  The ones 
 ### Run AppleScript (show prompt for lens selection)
 
  1. Expand section
- 2. The double quoted values between the `{` and `}` are the items that appear in the list.  The number at the beginning of each quoted string (example: `1. Nikon…`) is the unique id that will be referenced later, and the rest is just a descriptive label (after the period).  Separate each item with a comma, and make sure double quotes surround each item's text.
+ 2. The double quoted values between the `{` and `}` are the items that appear in the list.  The number at the beginning of each quoted string (example: `1. Nikon…`) is the unique id that will be referenced later, and the rest is just a descriptive label (after the period).  Separate each item with a comma, and make sure double quotes surround each item's text.  Add or remove lenses as desired.
 
 ### Run Shell Script (modify EXIF to files based using exiftool)
  1. Expand section
  2. Inside the `case` statement, the `1.*)`, `2.*)`, etc. correspond to the numbers at the beginning of each quoted string in the previous section.  These must match up, or else the lens you select from the dialog won't set the correct lens info.
  3. Edit the values within the `lens_params` string for each lens for what you want to set into the image's EXIF data.  Specific examples are given below for prime and zoom lenses.  The `Lens` value is the description that appears in Lightroom; this can be as generic or as verbose as you'd like.  I tried to keep mine similar to what other CPU lenses I use report.
  4. Additional EXIF fields fields are described in this [exiftool documentation](http://www.sno.phy.queensu.ca/~phil/exiftool/TagNames/EXIF.html).  Some fields of possible interest: `LensMake`, `LensModel`, `LensSerialNumber`.
- 5. If you wish to remove the Growl notification, put a `#` in front of the last line that starts with `/usr/local/bin/growlnotify`.
+ 5. Feel free to add or remove lenses as desired, but they need to have a corresponding entry in the *Run AppleScript* section.
+ 6. If you wish to remove the Growl notification, put a `#` in front of the last line that starts with `/usr/local/bin/growlnotify`.
 
 **Prime lens example:**
 
