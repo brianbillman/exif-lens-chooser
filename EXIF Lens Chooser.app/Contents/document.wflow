@@ -5,7 +5,7 @@
 	<key>AMApplicationBuild</key>
 	<string>330</string>
 	<key>AMApplicationVersion</key>
-	<string>2.2.1</string>
+	<string>2.2.2</string>
 	<key>AMDocumentVersion</key>
 	<string>2</string>
 	<key>actions</key>
@@ -115,7 +115,7 @@
 				<key>isViewVisible</key>
 				<false/>
 				<key>location</key>
-				<string>501.000000:793.000000</string>
+				<string>493.500000:1306.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Set Value of Variable.action/Contents/Resources/English.lproj/main.nib</string>
 			</dict>
@@ -165,7 +165,7 @@
 				<key>ActionParameters</key>
 				<dict>
 					<key>source</key>
-					<string>on run {parameters}		set lens_selection to choose from list {"1. Nikon 28mm f/2.8 AIS", "2. Vivitar 28mm f/2.0 AIS", "3. Nikon 28mm f/3.5 Pre-AI", "4. Nikon 50mm f/1.8 Series E", "5. Nikon 50mm f/2.0", "6. Micro-Nikkor 55mm f/3.5", "7. Nikon 105mm f/2.5 AI", "8. Nikon 75-150mm f/3.5 Series E", "9. Vivitar Series 1 28-90mm f/2.8-3.5"} with prompt "Select Lens:"		return lens_selectionend run</string>
+					<string>on run {parameters}		set lens_selection to choose from list {"1. Nikon 28mm f/2.8 AIS", "2. Vivitar 28mm f/2.0 AIS", "3. Nikon 50mm f/1.8 Series E", "4. Nikon 50mm f/2.0", "5. Micro-Nikkor 55mm f/3.5", "6. Nikon 105mm f/2.5 AI", "7. Nikon 75-150mm f/3.5 Series E", "8. Nikon 200mm f/4.0 AI", "9. Vivitar Series 1 28-90mm f/2.8-3.5"} with prompt "Select Lens:"		return lens_selectionend run</string>
 				</dict>
 				<key>BundleIdentifier</key>
 				<string>com.apple.Automator.RunScript</string>
@@ -221,7 +221,7 @@ end run</string>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>501.000000:751.000000</string>
+				<string>493.500000:1264.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Run AppleScript.action/Contents/Resources/English.lproj/main.nib</string>
 			</dict>
@@ -333,7 +333,7 @@ end run</string>
 				<key>isViewVisible</key>
 				<false/>
 				<key>location</key>
-				<string>501.000000:438.000000</string>
+				<string>493.500000:951.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Set Value of Variable.action/Contents/Resources/English.lproj/main.nib</string>
 			</dict>
@@ -447,7 +447,7 @@ end run</string>
 				<key>isViewVisible</key>
 				<false/>
 				<key>location</key>
-				<string>501.000000:396.000000</string>
+				<string>493.500000:909.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Get Value of Variable.action/Contents/Resources/English.lproj/main.nib</string>
 			</dict>
@@ -559,7 +559,7 @@ end run</string>
 				<key>isViewVisible</key>
 				<false/>
 				<key>location</key>
-				<string>501.000000:354.000000</string>
+				<string>493.500000:867.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Get Value of Variable.action/Contents/Resources/English.lproj/main.nib</string>
 			</dict>
@@ -646,17 +646,6 @@ case "$lens_name" in
 
    3.*)
       lens_params="\
-                  -Lens='28 mm f/3.5' \
-                  -FocalLength='28' \
-                  -FocalLengthIn35mmFormat='42' \
-                  -LensType='MF' \
-                  -EffectiveMaxAperture='3.5' \
-                  "
-   ;;
-
-
-   4.*)
-      lens_params="\
                   -Lens='50 mm f/1.8 Series E' \
                   -FocalLength='50' \
                   -FocalLengthIn35mmFormat='75' \
@@ -665,7 +654,7 @@ case "$lens_name" in
                   "
    ;;
    
-   5.*)
+   4.*)
       lens_params="\
                   -Lens='50 mm f/2.0' \
                   -FocalLength='50' \
@@ -675,7 +664,7 @@ case "$lens_name" in
                   "
    ;;
    
-   6.*)
+   5.*)
       lens_params="\
                   -Lens='55 mm f/3.5' \
                   -FocalLength='55' \
@@ -685,7 +674,7 @@ case "$lens_name" in
                   "
    ;;
 
-   7.*)
+   6.*)
       lens_params="\
                   -Lens='105 mm f/2.5' \
                   -FocalLength='105' \
@@ -695,7 +684,7 @@ case "$lens_name" in
                   "
    ;;
    
-   8.*)
+   7.*)
       lens_params="\
                   -Lens='75-150 mm f/3.5' \
                   -LensType='MF' \
@@ -704,6 +693,16 @@ case "$lens_name" in
                   -MaxFocalLength='150' \
                   -MaxApertureAtMaxFocal='3.5' \
                   -EffectiveMaxAperture='3.5' \
+                  "
+   ;;
+
+   8.*)
+      lens_params="\
+                  -Lens='200 mm f/4.0' \
+                  -FocalLength='200' \
+                  -FocalLengthIn35mmFormat='300' \
+                  -LensType='MF' \
+                  -EffectiveMaxAperture='4.0' \
                   "
    ;;
 
@@ -849,7 +848,7 @@ RESULT=`eval $cmd`
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>501.000000:312.000000</string>
+				<string>493.500000:825.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Run Shell Script.action/Contents/Resources/English.lproj/main.nib</string>
 			</dict>
@@ -859,40 +858,40 @@ RESULT=`eval $cmd`
 	</array>
 	<key>connectors</key>
 	<dict>
-		<key>488959CF-6B86-4C00-A746-66BEBE2FB404</key>
-		<dict>
-			<key>from</key>
-			<string>D373FFFE-0740-4ABD-8E3E-27837B542E91 - D373FFFE-0740-4ABD-8E3E-27837B542E91</string>
-			<key>to</key>
-			<string>C8C61272-C9A1-458E-B91E-A09FBDD32C3F - C8C61272-C9A1-458E-B91E-A09FBDD32C3F</string>
-		</dict>
-		<key>4B92BEEB-8285-4FDA-A3F0-55747906E361</key>
-		<dict>
-			<key>from</key>
-			<string>C8C61272-C9A1-458E-B91E-A09FBDD32C3F - C8C61272-C9A1-458E-B91E-A09FBDD32C3F</string>
-			<key>to</key>
-			<string>612FE2A8-68FB-417E-AE52-28BD5D88CA84 - 612FE2A8-68FB-417E-AE52-28BD5D88CA84</string>
-		</dict>
-		<key>6CA90A6E-8492-431A-9E2A-4DA7E5CEDB30</key>
+		<key>5C2FF338-D99C-4AF0-95B5-03DBD21D9B3A</key>
 		<dict>
 			<key>from</key>
 			<string>FA1E1CAC-5FB0-4282-96D9-C45993D3B1A3 - FA1E1CAC-5FB0-4282-96D9-C45993D3B1A3</string>
 			<key>to</key>
 			<string>FDD69353-BC0C-4E6D-B062-05B5ABF78DB3 - FDD69353-BC0C-4E6D-B062-05B5ABF78DB3</string>
 		</dict>
-		<key>881EBA38-3A3B-488E-A579-E6C84510DCA1</key>
+		<key>67C840E6-70E1-42B4-97ED-B7C343A50E21</key>
+		<dict>
+			<key>from</key>
+			<string>612FE2A8-68FB-417E-AE52-28BD5D88CA84 - 612FE2A8-68FB-417E-AE52-28BD5D88CA84</string>
+			<key>to</key>
+			<string>FA1E1CAC-5FB0-4282-96D9-C45993D3B1A3 - FA1E1CAC-5FB0-4282-96D9-C45993D3B1A3</string>
+		</dict>
+		<key>6807F31E-ECAA-4490-A0CE-B4C556E46BD6</key>
+		<dict>
+			<key>from</key>
+			<string>C8C61272-C9A1-458E-B91E-A09FBDD32C3F - C8C61272-C9A1-458E-B91E-A09FBDD32C3F</string>
+			<key>to</key>
+			<string>612FE2A8-68FB-417E-AE52-28BD5D88CA84 - 612FE2A8-68FB-417E-AE52-28BD5D88CA84</string>
+		</dict>
+		<key>8A6C4361-47DE-4643-9B11-C54897D1F168</key>
 		<dict>
 			<key>from</key>
 			<string>C91DB5E4-09B3-41C7-8487-6B4CD67A3D90 - C91DB5E4-09B3-41C7-8487-6B4CD67A3D90</string>
 			<key>to</key>
 			<string>D373FFFE-0740-4ABD-8E3E-27837B542E91 - D373FFFE-0740-4ABD-8E3E-27837B542E91</string>
 		</dict>
-		<key>9D1E5A83-18E6-4A70-82DF-205867F07349</key>
+		<key>B5412163-E06D-4505-BAEC-F785B33320B0</key>
 		<dict>
 			<key>from</key>
-			<string>612FE2A8-68FB-417E-AE52-28BD5D88CA84 - 612FE2A8-68FB-417E-AE52-28BD5D88CA84</string>
+			<string>D373FFFE-0740-4ABD-8E3E-27837B542E91 - D373FFFE-0740-4ABD-8E3E-27837B542E91</string>
 			<key>to</key>
-			<string>FA1E1CAC-5FB0-4282-96D9-C45993D3B1A3 - FA1E1CAC-5FB0-4282-96D9-C45993D3B1A3</string>
+			<string>C8C61272-C9A1-458E-B91E-A09FBDD32C3F - C8C61272-C9A1-458E-B91E-A09FBDD32C3F</string>
 		</dict>
 	</dict>
 	<key>variables</key>
