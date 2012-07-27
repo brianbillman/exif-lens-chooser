@@ -115,7 +115,7 @@
 				<key>isViewVisible</key>
 				<false/>
 				<key>location</key>
-				<string>493.500000:1078.000000</string>
+				<string>501.000000:793.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Set Value of Variable.action/Contents/Resources/English.lproj/main.nib</string>
 			</dict>
@@ -165,7 +165,7 @@
 				<key>ActionParameters</key>
 				<dict>
 					<key>source</key>
-					<string>on run {parameters}		set lens_selection to choose from list {"1. Nikon 28mm f/2.8 AIS", "2. Vivitar 28mm f/2.0 AIS", "3. Nikon 50mm f/1.8 Series E", "4. Nikon 50mm f/2.0", "5. Micro-Nikkor 55mm f/3.5", "6. Nikon 105mm f/2.5 AI", "7. Micro-Nikkor 105mm f/4 AIS", "8. Nikon 75-150mm f/3.5 Series E", "9. Nikon 200mm f/4.0 AI", "10. Vivitar Series 1 28-90mm f/2.8-3.5"} with prompt "Select Lens:"		return lens_selectionend run</string>
+					<string>on run {parameters}		set lens_selection to choose from list {"1. Nikkor 28 mm f/2.8 AIS", "2. Vivitar 28 mm f/2.0 MC Close Focus", "3. Nikon 50 mm f/1.8 Series E", "4. Nikkor 50 mm f/2.0", "5. Micro-Nikkor 55 mm f/3.5 AI", "6. Nikkor 105 mm f/2.5 AI", "7. Micro-Nikkor 105 mm f/4 AIS", "8. Nikkor 200 mm f/4.0 AI", "9. Nikon 75-150 mm f/3.5 Series E", "10. Vivitar Series 1 28-90 mm f/2.8-3.5", "100. Nikkor 28 mm f/2.0 AIS", "101. Nikkor H Auto 28 mm f/3.5"} with prompt "Select Lens:"		return lens_selectionend run</string>
 				</dict>
 				<key>BundleIdentifier</key>
 				<string>com.apple.Automator.RunScript</string>
@@ -221,7 +221,7 @@ end run</string>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>493.500000:1036.000000</string>
+				<string>501.000000:751.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Run AppleScript.action/Contents/Resources/English.lproj/main.nib</string>
 			</dict>
@@ -333,7 +333,7 @@ end run</string>
 				<key>isViewVisible</key>
 				<false/>
 				<key>location</key>
-				<string>493.500000:723.000000</string>
+				<string>501.000000:438.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Set Value of Variable.action/Contents/Resources/English.lproj/main.nib</string>
 			</dict>
@@ -447,7 +447,7 @@ end run</string>
 				<key>isViewVisible</key>
 				<false/>
 				<key>location</key>
-				<string>493.500000:681.000000</string>
+				<string>501.000000:396.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Get Value of Variable.action/Contents/Resources/English.lproj/main.nib</string>
 			</dict>
@@ -559,7 +559,7 @@ end run</string>
 				<key>isViewVisible</key>
 				<false/>
 				<key>location</key>
-				<string>493.500000:639.000000</string>
+				<string>501.000000:354.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Get Value of Variable.action/Contents/Resources/English.lproj/main.nib</string>
 			</dict>
@@ -623,110 +623,259 @@ shift
 
 lens_params=""
 
-case "$lens_name" in   
+case "$lens_name" in 
    1.*)
+      lens_info='Nikkor 28 mm f/2.8 AIS'
       lens_params="\
-                  -Lens='28 mm f/2.8 AIS' \
-                  -FocalLength='28' \
-                  -FocalLengthIn35mmFormat='42' \
-                  -LensType='MF' \
-                  -EffectiveMaxAperture='2.8' \
-                  "
+              -AFAperture='2.8' \
+              -DNGLensInfo='$lens_info' \
+              -EffectiveMaxAperture='2.8' \
+              -FocalLength='28' \
+              -FocalLengthIn35mmFormat='42' \
+              -Lens='$lens_info' \
+              -LensFStops='6.00' \
+              -LensInfo='$lens_info' \
+              -LensModel='$lens_info' \
+              -LensType='MF' \
+              -MaxApertureAtMaxFocal='2.8' \
+              -MaxApertureAtMinFocal='2.8' \
+              -MaxApertureValue='2.8' \
+              -MaxFocalLength='28' \
+              -MinFocalLength='28' \
+               "
    ;;
 
    2.*)
-      lens_params="\
-                  -Lens='Vivitar 28 mm f/2.0 MC Close Focus' \
-                  -FocalLength='28' \
-                  -FocalLengthIn35mmFormat='42' \
-                  -LensType='MF' \
-                  -EffectiveMaxAperture='2.0' \
-                  "
+   lens_info='Vivitar 28 mm f/2.0 MC Close Focus'
+   lens_params="\
+           -AFAperture='2.0' \
+           -DNGLensInfo='$lens_info' \
+           -EffectiveMaxAperture='2.0' \
+           -FocalLength='28' \
+           -FocalLengthIn35mmFormat='42' \
+           -Lens='$lens_info' \
+           -LensFStops='6.00' \
+           -LensInfo='$lens_info' \
+           -LensModel='$lens_info' \
+           -LensType='MF' \
+           -MaxApertureAtMaxFocal='2.0' \
+           -MaxApertureAtMinFocal='2.0' \
+           -MaxApertureValue='2.0' \
+           -MaxFocalLength='28' \
+           -MinFocalLength='28' \
+            "
    ;;
 
    3.*)
-      lens_params="\
-                  -Lens='50 mm f/1.8 Series E' \
-                  -FocalLength='50' \
-                  -FocalLengthIn35mmFormat='75' \
-                  -LensType='MF' \
-                  -EffectiveMaxAperture='1.8' \
-                  "
+   lens_info='Nikon 50 mm f/1.8 Series E'
+   lens_params="\
+           -AFAperture='1.8' \
+           -DNGLensInfo='$lens_info' \
+           -EffectiveMaxAperture='1.8' \
+           -FocalLength='50' \
+           -FocalLengthIn35mmFormat='75' \
+           -Lens='$lens_info' \
+           -LensFStops='7.33' \
+           -LensInfo='$lens_info' \
+           -LensModel='$lens_info' \
+           -LensType='MF' \
+           -MaxApertureAtMaxFocal='1.8' \
+           -MaxApertureAtMinFocal='1.8' \
+           -MaxApertureValue='1.8' \
+           -MaxFocalLength='50' \
+           -MinFocalLength='50' \
+            "
    ;;
-   
+
    4.*)
-      lens_params="\
-                  -Lens='50 mm f/2.0' \
-                  -FocalLength='50' \
-                  -FocalLengthIn35mmFormat='75' \
-                  -LensType='MF' \
-                  -EffectiveMaxAperture='2.0' \
-                  "
+   lens_info='Nikkor 50 mm f/2.0'
+   lens_params="\
+           -AFAperture='2.0' \
+           -DNGLensInfo='$lens_info' \
+           -EffectiveMaxAperture='2.0' \
+           -FocalLength='50' \
+           -FocalLengthIn35mmFormat='75' \
+           -Lens='$lens_info' \
+           -LensFStops='6.00' \
+           -LensInfo='$lens_info' \
+           -LensModel='$lens_info' \
+           -LensType='MF' \
+           -MaxApertureAtMaxFocal='2.0' \
+           -MaxApertureAtMinFocal='2.0' \
+           -MaxApertureValue='2.0' \
+           -MaxFocalLength='50' \
+           -MinFocalLength='50' \
+            "
    ;;
-   
+
    5.*)
-      lens_params="\
-                  -Lens='55 mm f/3.5' \
-                  -FocalLength='55' \
-                  -FocalLengthIn35mmFormat='82.5' \
-                  -LensType='MF' \
-                  -EffectiveMaxAperture='3.5' \
-                  "
+   lens_info='Micro-Nikkor 55 mm f/3.5 AI'
+   lens_params="\
+           -AFAperture='3.5' \
+           -DNGLensInfo='$lens_info' \
+           -EffectiveMaxAperture='3.5' \
+           -FocalLength='55' \
+           -FocalLengthIn35mmFormat='82.5' \
+           -Lens='$lens_info' \
+           -LensFStops='6.33' \
+           -LensInfo='$lens_info' \
+           -LensModel='$lens_info' \
+           -LensType='MF' \
+           -MaxApertureAtMaxFocal='3.5' \
+           -MaxApertureAtMinFocal='3.5' \
+           -MaxApertureValue='3.5' \
+           -MaxFocalLength='55' \
+           -MinFocalLength='55' \
+            "
    ;;
 
    6.*)
-      lens_params="\
-                  -Lens='105 mm f/2.5' \
-                  -FocalLength='105' \
-                  -FocalLengthIn35mmFormat='157.5' \
-                  -LensType='MF' \
-                  -EffectiveMaxAperture='2.5' \
-                  "
+   lens_info='Nikkor 105 mm f/2.5 AI'
+   lens_params="\
+               -AFAperture='2.5' \
+               -DNGLensInfo='$lens_info' \
+               -EffectiveMaxAperture='2.5' \
+               -FocalLength='105' \
+               -FocalLengthIn35mmFormat='157.5' \
+               -Lens='$lens_info' \
+               -LensFStops='6.33' \
+               -LensInfo='$lens_info' \
+               -LensModel='$lens_info' \
+               -LensType='MF' \
+               -MaxApertureAtMaxFocal='2.5' \
+               -MaxApertureAtMinFocal='2.5' \
+               -MaxApertureValue='2.5' \
+               -MaxFocalLength='105' \
+               -MinFocalLength='105' \
+               "
    ;;
 
    7.*)
+      lens_info='Micro-Nikkor 105 mm f/4 AIS'
       lens_params="\
-                  -Lens='105 mm f/4.0 AIS' \
+                  -AFAperture='4.0' \
+                  -DNGLensInfo='$lens_info' \
+                  -EffectiveMaxAperture='4.0' \
                   -FocalLength='105' \
                   -FocalLengthIn35mmFormat='157.5' \
+                  -Lens='$lens_info' \
+                  -LensFStops='6.00' \
+                  -LensInfo='$lens_info' \
+                  -LensModel='$lens_info' \
                   -LensType='MF' \
-                  -EffectiveMaxAperture='4.0' \
+                  -MaxApertureAtMaxFocal='4.0' \
+                  -MaxApertureAtMinFocal='4.0' \
+                  -MaxApertureValue='4.0' \
+                  -MaxFocalLength='105' \
+                  -MinFocalLength='105' \
                   "
    ;;
-   
+
    8.*)
-      lens_params="\
-                  -Lens='75-150 mm f/3.5' \
-                  -LensType='MF' \
-                  -MinFocalLength='75' \
-                  -MaxApertureAtMinFocal='3.5' \
-                  -MaxFocalLength='150' \
-                  -MaxApertureAtMaxFocal='3.5' \
-                  -EffectiveMaxAperture='3.5' \
-                  "
+   lens_info='Nikkor 200 mm f/4.0 AI'
+   lens_params="\
+               -AFAperture='4.0' \
+               -DNGLensInfo='$lens_info' \
+               -EffectiveMaxAperture='4.0' \
+               -FocalLength='200' \
+               -FocalLengthIn35mmFormat='300' \
+               -Lens='$lens_info' \
+               -LensFStops='6.00' \
+               -LensInfo='$lens_info' \
+               -LensModel='$lens_info' \
+               -LensType='MF' \
+               -MaxApertureAtMaxFocal='4.0' \
+               -MaxApertureAtMinFocal='4.0' \
+               -MaxApertureValue='4.0' \
+               -MaxFocalLength='200' \
+               -MinFocalLength='200' \
+               "
    ;;
 
    9.*)
+      lens_info='Nikon 75-150 mm f/3.5 Series E'
       lens_params="\
-                  -Lens='200 mm f/4.0' \
-                  -FocalLength='200' \
-                  -FocalLengthIn35mmFormat='300' \
-                  -LensType='MF' \
-                  -EffectiveMaxAperture='4.0' \
-                  "
+               -AFAperture='3.5' \
+               -DNGLensInfo='$lens_info' \
+               -EffectiveMaxAperture='3.5' \
+               -Lens='$lens_info' \
+               -LensFStops='6.33' \
+               -LensInfo='$lens_info' \
+               -LensModel='$lens_info' \
+               -LensType='MF' \
+               -MaxApertureAtMaxFocal='3.5' \
+               -MaxApertureAtMinFocal='3.5' \
+               -MaxApertureValue='3.5' \
+               -MaxFocalLength='150' \
+               -MinFocalLength='75' \
+               "
    ;;
 
    10.*)
-      lens_params="\
-                  -Lens='Vivitar Series 1 28-90 mm f/2.8-3.5' \
-                  -LensType='MF' \
-                  -MinFocalLength='28' \
-                  -MaxApertureAtMinFocal='2.8' \
-                  -MaxFocalLength='90' \
-                  -MaxApertureAtMaxFocal='3.5' \
-                  -EffectiveMaxAperture='3.5' \
-                  "
+   lens_info='Vivitar Series 1 28-90 mm f/2.8-3.5'
+   lens_params="\
+               -AFAperture='3.5' \
+               -DNGLensInfo='$lens_info' \
+               -EffectiveMaxAperture='3.5' \
+               -Lens='$lens_info' \
+               -LensFStops='5.00' \
+               -LensInfo='$lens_info' \
+               -LensModel='$lens_info' \
+               -LensType='MF' \
+               -MaxApertureAtMaxFocal='3.5' \
+               -MaxApertureAtMinFocal='2.8' \
+               -MaxApertureValue='2.8' \
+               -MaxFocalLength='90' \
+               -MinFocalLength='28' \
+               "
    ;;
+
+
+
+  # old lenses I no longer have:
+
+   100.*)
+      lens_info='Nikkor 28 mm f/2.0 AIS'
+      lens_params="\
+              -AFAperture='2.0' \
+              -DNGLensInfo='$lens_info' \
+              -EffectiveMaxAperture='2.0' \
+              -FocalLength='28' \
+              -FocalLengthIn35mmFormat='42' \
+              -Lens='$lens_info' \
+              -LensFStops='7.00' \
+              -LensInfo='$lens_info' \
+              -LensModel='$lens_info' \
+              -LensType='MF' \
+              -MaxApertureAtMaxFocal='2.0' \
+              -MaxApertureAtMinFocal='2.0' \
+              -MaxApertureValue='2.0' \
+              -MaxFocalLength='28' \
+              -MinFocalLength='28' \
+               "
+   ;;
+
+   101.*)
+      lens_info='Nikkor H Auto 28 mm f/3.5'
+      lens_params="\
+              -AFAperture='3.5' \
+              -DNGLensInfo='$lens_info' \
+              -EffectiveMaxAperture='3.5' \
+              -FocalLength='28' \
+              -FocalLengthIn35mmFormat='42' \
+              -Lens='$lens_info' \
+              -LensFStops='4.33' \
+              -LensInfo='$lens_info' \
+              -LensModel='$lens_info' \
+              -LensType='MF' \
+              -MaxApertureAtMaxFocal='3.5' \
+              -MaxApertureAtMinFocal='3.5' \
+              -MaxApertureValue='3.5' \
+              -MaxFocalLength='28' \
+              -MinFocalLength='28' \
+               "
+   ;;
+
 
 esac
 
@@ -738,8 +887,6 @@ cmd="exiftool -overwrite_original $lens_params \"\$@\""
 
 # update the EXIF info in file(s)
 RESULT=`eval $cmd`
-
-# -if '$Lens eq "0mm f/0"'
 
 # show result in growl
 /usr/local/bin/growlnotify -s -a "Automator.app" -t "$lens_name" -m "$RESULT"
@@ -858,7 +1005,7 @@ RESULT=`eval $cmd`
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>493.500000:597.000000</string>
+				<string>501.000000:312.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Run Shell Script.action/Contents/Resources/English.lproj/main.nib</string>
 			</dict>
@@ -868,40 +1015,40 @@ RESULT=`eval $cmd`
 	</array>
 	<key>connectors</key>
 	<dict>
-		<key>21B1BD51-992A-46D5-8111-D6672018F400</key>
+		<key>21930B54-471E-4000-B9FA-CC6B79FD5B40</key>
 		<dict>
 			<key>from</key>
-			<string>612FE2A8-68FB-417E-AE52-28BD5D88CA84 - 612FE2A8-68FB-417E-AE52-28BD5D88CA84</string>
+			<string>C8C61272-C9A1-458E-B91E-A09FBDD32C3F - C8C61272-C9A1-458E-B91E-A09FBDD32C3F</string>
 			<key>to</key>
-			<string>FA1E1CAC-5FB0-4282-96D9-C45993D3B1A3 - FA1E1CAC-5FB0-4282-96D9-C45993D3B1A3</string>
+			<string>612FE2A8-68FB-417E-AE52-28BD5D88CA84 - 612FE2A8-68FB-417E-AE52-28BD5D88CA84</string>
 		</dict>
-		<key>91C7BE7E-352B-4A22-8240-0494554F20B6</key>
+		<key>48D97CC2-93FF-458E-BF1E-49A890331850</key>
+		<dict>
+			<key>from</key>
+			<string>C91DB5E4-09B3-41C7-8487-6B4CD67A3D90 - C91DB5E4-09B3-41C7-8487-6B4CD67A3D90</string>
+			<key>to</key>
+			<string>D373FFFE-0740-4ABD-8E3E-27837B542E91 - D373FFFE-0740-4ABD-8E3E-27837B542E91</string>
+		</dict>
+		<key>4DDF04AC-F15F-4510-8DCB-92057D80FDFA</key>
 		<dict>
 			<key>from</key>
 			<string>FA1E1CAC-5FB0-4282-96D9-C45993D3B1A3 - FA1E1CAC-5FB0-4282-96D9-C45993D3B1A3</string>
 			<key>to</key>
 			<string>FDD69353-BC0C-4E6D-B062-05B5ABF78DB3 - FDD69353-BC0C-4E6D-B062-05B5ABF78DB3</string>
 		</dict>
-		<key>AB234EE3-49C1-43D8-A10F-BC96059B3A53</key>
+		<key>8EF90AD6-8F47-4DB8-B68B-45DE52B5D681</key>
 		<dict>
 			<key>from</key>
-			<string>D373FFFE-0740-4ABD-8E3E-27837B542E91 - D373FFFE-0740-4ABD-8E3E-27837B542E91</string>
-			<key>to</key>
-			<string>C8C61272-C9A1-458E-B91E-A09FBDD32C3F - C8C61272-C9A1-458E-B91E-A09FBDD32C3F</string>
-		</dict>
-		<key>BE13743D-8AB5-4F50-87D1-770E7FEDB789</key>
-		<dict>
-			<key>from</key>
-			<string>C8C61272-C9A1-458E-B91E-A09FBDD32C3F - C8C61272-C9A1-458E-B91E-A09FBDD32C3F</string>
-			<key>to</key>
 			<string>612FE2A8-68FB-417E-AE52-28BD5D88CA84 - 612FE2A8-68FB-417E-AE52-28BD5D88CA84</string>
+			<key>to</key>
+			<string>FA1E1CAC-5FB0-4282-96D9-C45993D3B1A3 - FA1E1CAC-5FB0-4282-96D9-C45993D3B1A3</string>
 		</dict>
-		<key>C51436C9-43D4-4CB9-9D66-CDAF905664EA</key>
+		<key>CC219608-FA0B-47A4-8FAC-492EBD7DE169</key>
 		<dict>
 			<key>from</key>
-			<string>C91DB5E4-09B3-41C7-8487-6B4CD67A3D90 - C91DB5E4-09B3-41C7-8487-6B4CD67A3D90</string>
-			<key>to</key>
 			<string>D373FFFE-0740-4ABD-8E3E-27837B542E91 - D373FFFE-0740-4ABD-8E3E-27837B542E91</string>
+			<key>to</key>
+			<string>C8C61272-C9A1-458E-B91E-A09FBDD32C3F - C8C61272-C9A1-458E-B91E-A09FBDD32C3F</string>
 		</dict>
 	</dict>
 	<key>variables</key>
