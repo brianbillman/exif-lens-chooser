@@ -21,7 +21,24 @@ I use Lightroom as my image library.  After importing images into Lightroom, I u
 
 You may notice that if any virtual copies existed for those files, the lens information does not get updated (within the virtual copies), only in the master photos.
 
-The solution is to:
+The easiest solution is to:
+
+1. Make sure the virtual copy and master file have snapshots saved.  Also note the rating and color label of the virtual copy.
+1. While in the Library module, select the virtual copy, then choose from the menu bar: *Photo* → *Set Copy as Master*.  This will make the virtual copy the master file, and the previous master a virtual copy.
+1. Choose from the menu bar *Metadata* → *Read Metadata from File*.  This will cause the current master (and what was a virtual copy) to be an exact match of the old master (develop settings, rating, color label).
+1. Right click on the master (the old virtual copy), and choose *Develop Settings*, and then choose the appropriate snapshot.  
+1. Set the rating and color label back to their original values.
+1. Select the virtual copy (what was the master before), and choose from the menu bar: *Photo* → *Set Copy as Master*.  From my experience the original settings will be reapplied (if not, re-apply the original master's snapshot).  Bonus: the virtual copy's original *Copy Name* will still be set correctly.
+
+The big benefits of this method include:
+
+* If the virtual copies are in any publish collections, just their metadata wil be updated, and you don't be prompted to remove the image from the publish collection like the old way.  
+* Less switching between modules, therefore is faster.
+
+Of course, it's still much easier to change the EXIF data *before* you create any virtual copies, but if you can't avoid it, this appears to be the best way to handle it for now.
+
+
+Alternatively, you can also do the following, but it will cause problems if the virtual copies are in any Publish Collections:
 
 1. In the Develop module, create a snapshot of the settings for the virtual copy (also make note of the copy name if one exists under Library → Metadata Panel).
 1. Delete the virtual copy with incorrect EXIF info.
@@ -97,6 +114,13 @@ You can see all the EXIF info any image file has by running in Terminal (useful 
 If you filter the output to only show certain text, you can run:
 
     $ exiftool path/to/file/image.jpg | grep -i "TextToFind"        
+
+
+## Make it Look Good
+
+Once you have saved the Automator application, why not give it [a nice looking icon](http://designrshub.com/2012/01/realistic-examples-of-high-quality-camera-lens-icons.html)?
+
+
 
 ## Other 
 
