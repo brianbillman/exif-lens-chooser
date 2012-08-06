@@ -118,7 +118,7 @@ If you filter the output to only show certain text, you can run:
 
 ## Make it Look Good
 
-Once you have saved the Automator application, why not give it [a nice looking icon](http://designrshub.com/2012/01/realistic-examples-of-high-quality-camera-lens-icons.html)?
+Once you have saved the Automator application, why not [change the application's icon](http://support.apple.com/kb/HT2493) with one of these [nice looking options](http://designrshub.com/2012/01/realistic-examples-of-high-quality-camera-lens-icons.html)?
 
 
 
