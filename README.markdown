@@ -15,7 +15,7 @@ The application also assumes Growl's [growlnotify](http://growl.info/extras.php#
 
 ## How I Use It
 
-I use Lightroom as my image library.  After importing images into Lightroom, I use the library filters to limit by lens (*0.0mm f/0.0* for photos without a lens defined) and then focal length (since my camera allows me to set partial EXIF information, such as focal length and aperture) and select all the remaining photos.  Then I explicitly save the metadata to the files (*Metadata → Save Metadata to File* or ⌘S), and drag and drop the photos from the Lightroom grid onto the application.  I recommend not editing the selected files in Lightroom before setting the correect lens info.  After files are updated by the app, I select them again (normally they are still selected) and choose *Metadata → Read Metadata from File*.  Lightroom then refreshes the files and you can see the new EXIF info for the selected images.
+I use Lightroom as my image library.  After importing images into Lightroom, I use the library filters to limit by lens (*0.0mm f/0.0* for photos without a lens defined) and then focal length (since my camera allows me to set partial EXIF information, such as focal length and aperture) and select all the remaining photos.  Then I explicitly save the metadata to the files (*Metadata → Save Metadata to File* or ⌘S), and drag and drop the photos from the Lightroom grid onto the application.  I recommend not editing the selected files in Lightroom before setting the correct lens info.  After files are updated by the app, I select them again (normally they are still selected) and choose *Metadata → Read Metadata from File*.  Lightroom then refreshes the files and you can see the new EXIF info for the selected images.
 
 ### Virtual Copies
 
@@ -50,7 +50,7 @@ The new virtual copy should have the updated lens info.
 
 ## How to Customize
 
-Open the app in Automator, and you should see 6 collapsable sections.  The ones the modify are the second and sixth sections.
+Open the app in Automator, and you should see 6 collapsable sections.  The ones to modify are the second and sixth sections.
 
 ### Run AppleScript (show prompt for lens selection)
 
