@@ -165,7 +165,12 @@
 				<key>ActionParameters</key>
 				<dict>
 					<key>source</key>
-					<string>on run {parameters}		set lens_selection to choose from list {"1. Nikkor 28 mm f/2.8 AIS", "2. Vivitar 28 mm f/2.0 MC Close Focus", "3. Nikon 50 mm f/1.8 Series E", "4. Nikkor 50 mm f/2.0", "5. Micro-Nikkor 55 mm f/3.5 AI", "6. Nikkor 105 mm f/2.5 AI", "7. Micro-Nikkor 105 mm f/4 AIS", "8. Nikkor 200 mm f/4.0 AI", "9. Nikon 75-150 mm f/3.5 Series E", "10. Vivitar Series 1 28-90 mm f/2.8-3.5", "100. Nikkor 28 mm f/2.0 AIS", "101. Nikkor H Auto 28 mm f/3.5"} with prompt "Select Lens:"		return lens_selectionend run</string>
+					<string>on run {parameters}
+	
+	set lens_selection to choose from list {"1. Nikkor 28 mm f/2.8 AIS", "2. Vivitar 28 mm f/2.0 MC Close Focus", "3. Nikon 50 mm f/1.8 Series E", "4. Nikkor 50 mm f/2.0", "5. Micro-Nikkor 55 mm f/3.5 AI", "6. Nikkor 105 mm f/2.5 AI", "7. Micro-Nikkor 105 mm f/4 AIS", "8. Nikkor 200 mm f/4.0 AI", "9. Nikkor 50-135 mm f/3.5 AIS", "10. Nikon 75-150 mm f/3.5 Series E", "11. Vivitar Series 1 28-90 mm f/2.8-3.5", "100. Nikkor 28 mm f/2.0 AIS", "101. Nikkor H Auto 28 mm f/3.5"} with prompt "Select Lens:"
+	
+	return lens_selection
+end run</string>
 				</dict>
 				<key>BundleIdentifier</key>
 				<string>com.apple.Automator.RunScript</string>
@@ -793,6 +798,37 @@ case "$lens_name" in
    ;;
 
    9.*)
+      lens_info='Nikkor 50-135 mm f/3.5 AIS'
+      lens_params="\
+               -AFAperture='3.5' \
+               -DNGLensInfo='$lens_info' \
+               -EffectiveMaxAperture='3.5' \
+               -Lens='$lens_info' \
+               -LensFStops='6.33' \
+               -LensInfo='$lens_info' \
+               -LensModel='$lens_info' \
+               -LensType='MF' \
+               -MaxApertureAtMaxFocal='3.5' \
+               -MaxApertureAtMinFocal='3.5' \
+               -MaxApertureValue='3.5' \
+               -MaxFocalLength='135' \
+               -MinFocalLength='50' \
+               -LensSpecification='50, 135, 3.5, 3.5' \
+               -LensID='$lens_info' \
+               -AutoFocus='Off' \
+               -DepthOfField='' \
+               -HyperfocalDistance='' \
+               -ExitPupilPosition='0' \
+               -FieldOfView='' \
+               -FocalLength='50' \
+               -FocalLengthIn35mmFormat='75' \
+               -FocusMode='Manual' \
+              	-LensIDNumber='0' \
+               -PhaseDetectAF='Off' \
+               "
+   ;;
+
+   10.*)
       lens_info='Nikon 75-150 mm f/3.5 Series E'
       lens_params="\
                -AFAperture='3.5' \
@@ -811,7 +847,7 @@ case "$lens_name" in
                "
    ;;
 
-   10.*)
+   11.*)
    lens_info='Vivitar Series 1 28-90 mm f/2.8-3.5'
    lens_params="\
                -AFAperture='3.5' \
