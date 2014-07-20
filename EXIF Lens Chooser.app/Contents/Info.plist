@@ -7,7 +7,7 @@
 	<key>AMStayOpen</key>
 	<false/>
 	<key>BuildMachineOSBuild</key>
-	<string>11E29</string>
+	<string>13A3007</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>English</string>
 	<key>CFBundleDocumentTypes</key>
@@ -40,27 +40,27 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.1.1</string>
+	<string>1.2</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleURLTypes</key>
 	<array/>
 	<key>CFBundleVersion</key>
-	<string>339.2</string>
+	<string>381</string>
 	<key>DTCompiler</key>
 	<string>com.apple.compilers.llvm.clang.1_0</string>
 	<key>DTPlatformBuild</key>
-	<string>11E29</string>
+	<string>5A11344p</string>
 	<key>DTPlatformVersion</key>
 	<string>GM</string>
 	<key>DTSDKBuild</key>
-	<string>11E29</string>
+	<string>13A3007</string>
 	<key>DTSDKName</key>
 	<string></string>
 	<key>DTXcode</key>
-	<string>0410</string>
+	<string>0500</string>
 	<key>DTXcodeBuild</key>
-	<string>11E29</string>
+	<string>5A11344p</string>
 	<key>LSMinimumSystemVersion</key>
 	<string>10.5</string>
 	<key>LSMinimumSystemVersionByArchitecture</key>
