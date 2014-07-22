@@ -730,16 +730,17 @@ lens_name="$1"
 shift
 
 lens_params=""
+focal_length=""
 
 case "$lens_name" in 
    1.*)
       lens_info='Nikkor 28 mm f/2.8 AIS'
+	  focal_length='28'
       lens_params="\
               -AFAperture='2.8' \
               -DNGLensInfo='$lens_info' \
               -EffectiveMaxAperture='2.8' \
               -FocalLength='28' \
-              -FocalLengthIn35mmFormat='42' \
               -Lens='$lens_info' \
               -LensFStops='6.00' \
               -LensInfo='$lens_info' \
@@ -755,12 +756,12 @@ case "$lens_name" in
 
    2.*)
    lens_info='Vivitar 28 mm f/2.0 MC Close Focus'
+   focal_length='28'
    lens_params="\
            -AFAperture='2.0' \
            -DNGLensInfo='$lens_info' \
            -EffectiveMaxAperture='2.0' \
            -FocalLength='28' \
-           -FocalLengthIn35mmFormat='42' \
            -Lens='$lens_info' \
            -LensFStops='6.00' \
            -LensInfo='$lens_info' \
@@ -776,12 +777,12 @@ case "$lens_name" in
 
    3.*)
    lens_info='Nikon 50 mm f/1.8 Series E'
+   focal_length='50'
    lens_params="\
            -AFAperture='1.8' \
            -DNGLensInfo='$lens_info' \
            -EffectiveMaxAperture='1.8' \
            -FocalLength='50' \
-           -FocalLengthIn35mmFormat='75' \
            -Lens='$lens_info' \
            -LensFStops='7.33' \
            -LensInfo='$lens_info' \
@@ -797,12 +798,12 @@ case "$lens_name" in
 
    4.*)
    lens_info='Nikkor 50 mm f/2.0'
+   focal_length='50'
    lens_params="\
            -AFAperture='2.0' \
            -DNGLensInfo='$lens_info' \
            -EffectiveMaxAperture='2.0' \
            -FocalLength='50' \
-           -FocalLengthIn35mmFormat='75' \
            -Lens='$lens_info' \
            -LensFStops='6.00' \
            -LensInfo='$lens_info' \
@@ -818,12 +819,12 @@ case "$lens_name" in
 
    5.*)
    lens_info='Micro-Nikkor 55 mm f/3.5 AI'
+   focal_length='55'
    lens_params="\
            -AFAperture='3.5' \
            -DNGLensInfo='$lens_info' \
            -EffectiveMaxAperture='3.5' \
            -FocalLength='55' \
-           -FocalLengthIn35mmFormat='82.5' \
            -Lens='$lens_info' \
            -LensFStops='6.33' \
            -LensInfo='$lens_info' \
@@ -839,12 +840,12 @@ case "$lens_name" in
 
    6.*)
    lens_info='Nikkor 105 mm f/2.5 AI'
+   focal_length='105'
    lens_params="\
                -AFAperture='2.5' \
                -DNGLensInfo='$lens_info' \
                -EffectiveMaxAperture='2.5' \
                -FocalLength='105' \
-               -FocalLengthIn35mmFormat='157.5' \
                -Lens='$lens_info' \
                -LensFStops='6.33' \
                -LensInfo='$lens_info' \
@@ -860,12 +861,12 @@ case "$lens_name" in
 
    7.*)
       lens_info='Micro-Nikkor 105 mm f/4 AIS'
+	  focal_length='105'
       lens_params="\
                   -AFAperture='4.0' \
                   -DNGLensInfo='$lens_info' \
                   -EffectiveMaxAperture='4.0' \
                   -FocalLength='105' \
-                  -FocalLengthIn35mmFormat='157.5' \
                   -Lens='$lens_info' \
                   -LensFStops='6.00' \
                   -LensInfo='$lens_info' \
@@ -881,12 +882,12 @@ case "$lens_name" in
 
    8.*)
    lens_info='Nikkor 135 mm f/2.0 AI'
+   focal_length='135'
    lens_params="\
                -AFAperture='2.0' \
                -DNGLensInfo='$lens_info' \
                -EffectiveMaxAperture='2.0' \
                -FocalLength='135' \
-               -FocalLengthIn35mmFormat='202.5' \
                -Lens='$lens_info' \
                -LensFStops='7.00' \
                -LensInfo='$lens_info' \
@@ -902,12 +903,12 @@ case "$lens_name" in
 
    9.*)
    lens_info='Nikkor 200 mm f/4.0 AI'
+   focal_length='200'
    lens_params="\
                -AFAperture='4.0' \
                -DNGLensInfo='$lens_info' \
                -EffectiveMaxAperture='4.0' \
                -FocalLength='200' \
-               -FocalLengthIn35mmFormat='300' \
                -Lens='$lens_info' \
                -LensFStops='6.00' \
                -LensInfo='$lens_info' \
@@ -923,12 +924,12 @@ case "$lens_name" in
 
    10.*)
    lens_info='Nikkor 400 mm f/5.6 ED-IF'
+   focal_length='400'
    lens_params="\
                -AFAperture='5.6' \
                -DNGLensInfo='$lens_info' \
                -EffectiveMaxAperture='5.6' \
                -FocalLength='400' \
-               -FocalLengthIn35mmFormat='600' \
                -Lens='$lens_info' \
                -LensFStops='5.00' \
                -LensInfo='$lens_info' \
@@ -965,10 +966,8 @@ case "$lens_name" in
                -HyperfocalDistance='' \
                -ExitPupilPosition='0' \
                -FieldOfView='' \
-               -FocalLength='50' \
-               -FocalLengthIn35mmFormat='75' \
                -FocusMode='Manual' \
-              	-LensIDNumber='0' \
+               -LensIDNumber='0' \
                -PhaseDetectAF='Off' \
                "
    ;;
@@ -1017,12 +1016,12 @@ case "$lens_name" in
 
    100.*)
       lens_info='Nikkor 28 mm f/2.0 AIS'
+	  focal_length='28'
       lens_params="\
               -AFAperture='2.0' \
               -DNGLensInfo='$lens_info' \
               -EffectiveMaxAperture='2.0' \
               -FocalLength='28' \
-              -FocalLengthIn35mmFormat='42' \
               -Lens='$lens_info' \
               -LensFStops='7.00' \
               -LensInfo='$lens_info' \
@@ -1038,12 +1037,12 @@ case "$lens_name" in
 
    101.*)
       lens_info='Nikkor H Auto 28 mm f/3.5'
+	  focal_length='28'
       lens_params="\
               -AFAperture='3.5' \
               -DNGLensInfo='$lens_info' \
               -EffectiveMaxAperture='3.5' \
               -FocalLength='28' \
-              -FocalLengthIn35mmFormat='42' \
               -Lens='$lens_info' \
               -LensFStops='4.33' \
               -LensInfo='$lens_info' \
@@ -1062,12 +1061,54 @@ esac
 
 #######################
 
+
+# function to calculate "35mm  Effective Focal Length"
+function calc35mmFocalLength()
+{
+	local fileName="$1"
+	local focalLength="$2"
+	
+	local camera=$(exiftool -Model "$fileName" | cut -d : -f 2 | sed 's/^ *//')
+	
+	case "$camera" in 
+		
+	    'NIKON D70S' | 'NIKON D300' | 'NIKON D7000' | 'NIKON D7100')
+			local conversionFactor='1.5'
+	    ;;
+		
+	    'NIKON D700' | 'NIKON D3' | 'NIKON D3S' | 'NIKON D600' | 'NIKON D610' | 'NIKON D800' | 'NIKON D800E' | 'NIKON DF' | 'NIKON D810')
+			local conversionFactor='1.0'
+	    ;;
+		
+	esac
+	
+	local focalLength35mm=$(echo "$conversionFactor * $focalLength" | bc -l)
+	
+	echo $focalLength35mm
+}
+
+
 # need to have "$@" properly escaped!
+# loop over each file
+RESULT=""
 
-cmd="exiftool -overwrite_original $lens_params \"\$@\""
+for file in "$@"
+do
+	focalLength35mmParam=""
+	if [ "$focal_length" != "" ]
+	then
+		focalLength35mm=$(calc35mmFocalLength "$file" "$focal_length" )
+		focalLength35mmParam="-FocalLengthIn35mmFormat='$focalLength35mm'"
+	fi
+	
+    cmd="exiftool -overwrite_original $lens_params $focalLength35mmParam \"$file\""
+	
+	# update the EXIF info in file(s)
+	RESULT="$RESULT $file = $(eval $cmd)\n"
+done
 
-# update the EXIF info in file(s)
-RESULT=`eval $cmd`
+
+
 
 # show result in growl
 /usr/local/bin/growlnotify -s -a "Automator.app" -t "$lens_name" -m "$RESULT"
