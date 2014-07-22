@@ -1109,9 +1109,50 @@ done
 
 
 
+# Write output and gather stats
 
-# show result in growl
-/usr/local/bin/growlnotify -s -a "Automator.app" -t "$lens_name" -m "$RESULT"
+EXIF_FILE='exif-lens-chooser.txt'
+EXIF_PATH_DISPLAY='~'
+EXIF_PATH="/Users/$(id -un)"
+EXIF_FULL_PATH="$EXIF_PATH/$EXIF_FILE"
+
+
+echo -e "$RESULT" &gt; "$EXIF_PATH/$EXIF_FILE"
+
+NUM_GOOD=$(grep -c '1 image files updated' "$EXIF_FULL_PATH" )
+NUM_BAD=$(grep -c '0 image files updated' "$EXIF_FULL_PATH" )
+
+
+if [ "$NUM_BAD" -gt "0" ]
+then
+	# couldn't update some files
+	SUBTITLE_TEXT="Updated: $NUM_GOOD, NOT Updated: $NUM_BAD"
+	MESSAGE_TEXT="See $EXIF_PATH_DISPLAY/$EXIF_FILE"
+else
+	# all files updated, remove file
+	rm "$EXIF_FULL_PATH"
+	SUBTITLE_TEXT="Success!"
+	MESSAGE_TEXT="Files updated: $NUM_GOOD"
+fi
+
+TITLE_TEXT="EXIF Update Complete"
+SOUND="Hero"
+
+
+
+# Show notification
+
+if type terminal-notifier &gt; /dev/null
+then
+  
+   terminal-notifier -message "$MESSAGE_TEXT" -title "$TITLE_TEXT" -subtitle "$SUBTITLE_TEXT" -sound "$SOUND" -sender "com.apple.automator.EXIF Lens Chooser"
+
+else
+
+	osascript -e "display notification \"$MESSAGE_TEXT\" with title \"$TITLE_TEXT\" subtitle \"$SUBTITLE_TEXT\" sound name \"$SOUND\" "
+
+fi
+
 </string>
 					<key>CheckedForUserDefaultShell</key>
 					<true/>
