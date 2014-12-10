@@ -1061,7 +1061,7 @@ function calc35mmFocalLength()
 			local conversionFactor='1.5'
 	    ;;
 		
-	    'NIKON D700' | 'NIKON D3' | 'NIKON D3S' | 'NIKON D600' | 'NIKON D610' | 'NIKON D800' | 'NIKON D800E' | 'NIKON DF' | 'NIKON D810')
+	    'NIKON D700' | 'NIKON D3' | 'NIKON D3S' | 'NIKON D600' | 'NIKON D610' | 'NIKON D800' | 'NIKON D800E' | 'NIKON DF' | 'NIKON D810' | 'NIKON D750')
 			local conversionFactor='1.0'
 	    ;;
 		
