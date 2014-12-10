@@ -165,7 +165,12 @@
 				<key>ActionParameters</key>
 				<dict>
 					<key>source</key>
-					<string>on run {parameters}		set lens_selection to choose from list {"Nikkor 28 mm f/2.8 AIS", "Vivitar 28 mm f/2.0 MC Close Focus", "Nikon 50 mm f/1.8 Series E", "Nikkor 50 mm f/2.0", "Micro-Nikkor 55 mm f/3.5 AI", "Nikkor 105 mm f/2.5 AI", "Micro-Nikkor 105 mm f/4 AIS", "Nikkor 135 mm f/2.0 AI", "Nikkor 200 mm f/4.0 AI", "Nikkor 400 mm f/5.6 ED-IF", "Nikkor 50-135 mm f/3.5 AIS", "Nikon 75-150 mm f/3.5 Series E", "Vivitar Series 1 28-90 mm f/2.8-3.5", "Nikkor 28 mm f/2.0 AIS", "Nikkor H Auto 28 mm f/3.5"} with prompt "Select Lens:"		return lens_selectionend run</string>
+					<string>on run {parameters}
+
+	set lens_selection to choose from list {"Nikkor 28 mm f/2.8 AIS", "Vivitar 28 mm f/2.0 MC Close Focus", "Nikon 50 mm f/1.8 Series E", "Nikkor 50 mm f/2.0", "Micro-Nikkor 55 mm f/3.5 AI", "Nikkor 105 mm f/2.5 AI", "Micro-Nikkor 105 mm f/4 AIS", "Nikkor 135 mm f/2.0 AI", "Nikkor 200 mm f/4.0 AI", "Nikkor 400 mm f/5.6 ED-IF", "Nikkor 50-135 mm f/3.5 AIS", "Nikon 75-150 mm f/3.5 Series E", "Vivitar Series 1 28-90 mm f/2.8-3.5", "Nikkor 28 mm f/2.0 AIS", "Nikkor H Auto 28 mm f/3.5"} with prompt "Select Lens:"
+
+	return lens_selection
+end run</string>
 				</dict>
 				<key>BundleIdentifier</key>
 				<string>com.apple.Automator.RunScript</string>
@@ -497,7 +502,13 @@ end run</string>
 				<key>ActionParameters</key>
 				<dict>
 					<key>source</key>
-					<string>on run {input, parameters}	if input is {false} then		tell me to quit	else		return input	end ifend run</string>
+					<string>on run {input, parameters}
+	if input is {false} then
+		tell me to quit
+	else
+		return input
+	end if
+end run</string>
 				</dict>
 				<key>BundleIdentifier</key>
 				<string>com.apple.Automator.RunScript</string>
