@@ -754,340 +754,340 @@ max_aperture_at_max_fl=''
 
 
 case "$lens_name" in
-   'Nikkor 28 mm f/2.8 AIS')
-	  focal_length='28'
+	'Nikkor 28 mm f/2.8 AIS')
+		focal_length='28'
 		max_aperture='2.8'
-      lens_params="\
+		lens_params="\
 					-AFAperture='$max_aperture' \
-              -DNGLensInfo='$lens_name' \
+					-DNGLensInfo='$lens_name' \
 					-EffectiveMaxAperture='$max_aperture' \
 					-FocalLength='$focal_length' \
-              -Lens='$lens_name' \
-              -LensFStops='6.00' \
-              -LensInfo='$lens_name' \
-              -LensModel='$lens_name' \
-              -LensType='MF' \
+					-Lens='$lens_name' \
+					-LensFStops='6.00' \
+					-LensInfo='$lens_name' \
+					-LensModel='$lens_name' \
+					-LensType='MF' \
 					-MaxApertureAtMaxFocal='$max_aperture' \
 					-MaxApertureAtMinFocal='$max_aperture' \
 					-MaxApertureValue='$max_aperture' \
 					-MaxFocalLength='$focal_length' \
 					-MinFocalLength='$focal_length' \
-               "
-   ;;
+         "
+	;;
 
-   'Vivitar 28 mm f/2.0 MC Close Focus')
-   focal_length='28'
+	'Vivitar 28 mm f/2.0 MC Close Focus')
+		focal_length='28'
 		max_aperture='2.0'
-   lens_params="\
+		lens_params="\
 					-AFAperture='$max_aperture' \
-           -DNGLensInfo='$lens_name' \
+					-DNGLensInfo='$lens_name' \
 					-EffectiveMaxAperture='$max_aperture' \
 					-FocalLength='$focal_length' \
-           -Lens='$lens_name' \
-           -LensFStops='6.00' \
-           -LensInfo='$lens_name' \
-           -LensModel='$lens_name' \
-           -LensType='MF' \
+					-Lens='$lens_name' \
+					-LensFStops='6.00' \
+					-LensInfo='$lens_name' \
+					-LensModel='$lens_name' \
+					-LensType='MF' \
 					-MaxApertureAtMaxFocal='$max_aperture' \
 					-MaxApertureAtMinFocal='$max_aperture' \
 					-MaxApertureValue='$max_aperture' \
 					-MaxFocalLength='$focal_length' \
 					-MinFocalLength='$focal_length' \
-            "
-   ;;
+      "
+	;;
 
-   'Nikon 50 mm f/1.8 Series E')
-   focal_length='50'
+	'Nikon 50 mm f/1.8 Series E')
+		focal_length='50'
 		max_aperture='1.8'
-   lens_params="\
+		lens_params="\
 					-AFAperture='$max_aperture' \
-           -DNGLensInfo='$lens_name' \
+					-DNGLensInfo='$lens_name' \
 					-EffectiveMaxAperture='$max_aperture' \
 					-FocalLength='$focal_length' \
-           -Lens='$lens_name' \
-           -LensFStops='7.33' \
-           -LensInfo='$lens_name' \
-           -LensModel='$lens_name' \
-           -LensType='MF' \
+					-Lens='$lens_name' \
+					-LensFStops='7.33' \
+					-LensInfo='$lens_name' \
+					-LensModel='$lens_name' \
+					-LensType='MF' \
 					-MaxApertureAtMaxFocal='$max_aperture' \
 					-MaxApertureAtMinFocal='$max_aperture' \
 					-MaxApertureValue='$max_aperture' \
 					-MaxFocalLength='$focal_length' \
 					-MinFocalLength='$focal_length' \
-            "
-   ;;
+					"
+	;;
 
-   'Nikkor 50 mm f/2.0')
-   focal_length='50'
+	'Nikkor 50 mm f/2.0')
+		focal_length='50'
 		max_aperture='2.0'
-   lens_params="\
+		lens_params="\
 					-AFAperture='$max_aperture' \
-           -DNGLensInfo='$lens_name' \
+					-DNGLensInfo='$lens_name' \
 					-EffectiveMaxAperture='$max_aperture' \
 					-FocalLength='$focal_length' \
-           -Lens='$lens_name' \
-           -LensFStops='6.00' \
-           -LensInfo='$lens_name' \
-           -LensModel='$lens_name' \
-           -LensType='MF' \
+					-Lens='$lens_name' \
+					-LensFStops='6.00' \
+					-LensInfo='$lens_name' \
+					-LensModel='$lens_name' \
+					-LensType='MF' \
 					-MaxApertureAtMaxFocal='$max_aperture' \
 					-MaxApertureAtMinFocal='$max_aperture' \
 					-MaxApertureValue='$max_aperture' \
 					-MaxFocalLength='$focal_length' \
 					-MinFocalLength='$focal_length' \
-            "
-   ;;
+					"
+	;;
 
-   'Micro-Nikkor 55 mm f/3.5 AI')
-   focal_length='55'
+	'Micro-Nikkor 55 mm f/3.5 AI')
+		focal_length='55'
 		max_aperture='3.5'
-   lens_params="\
+		lens_params="\
 					-AFAperture='$max_aperture' \
-           -DNGLensInfo='$lens_name' \
+					-DNGLensInfo='$lens_name' \
 					-EffectiveMaxAperture='$max_aperture' \
 					-FocalLength='$focal_length' \
-           -Lens='$lens_name' \
-           -LensFStops='6.33' \
-           -LensInfo='$lens_name' \
-           -LensModel='$lens_name' \
-           -LensType='MF' \
+					-Lens='$lens_name' \
+					-LensFStops='6.33' \
+					-LensInfo='$lens_name' \
+					-LensModel='$lens_name' \
+					-LensType='MF' \
 					-MaxApertureAtMaxFocal='$max_aperture' \
 					-MaxApertureAtMinFocal='$max_aperture' \
 					-MaxApertureValue='$max_aperture' \
 					-MaxFocalLength='$focal_length' \
 					-MinFocalLength='$focal_length' \
-            "
-   ;;
+"
+	;;
 
-   'Nikkor 105 mm f/2.5 AI')
-   focal_length='105'
+	'Nikkor 105 mm f/2.5 AI')
+		focal_length='105'
 		max_aperture='2.5'
-   lens_params="\
+		lens_params="\
 					-AFAperture='$max_aperture' \
-               -DNGLensInfo='$lens_name' \
+					-DNGLensInfo='$lens_name' \
 					-EffectiveMaxAperture='$max_aperture' \
 					-FocalLength='$focal_length' \
-               -Lens='$lens_name' \
-               -LensFStops='6.33' \
-               -LensInfo='$lens_name' \
-               -LensModel='$lens_name' \
-               -LensType='MF' \
+					-Lens='$lens_name' \
+					-LensFStops='6.33' \
+					-LensInfo='$lens_name' \
+					-LensModel='$lens_name' \
+					-LensType='MF' \
 					-MaxApertureAtMaxFocal='$max_aperture' \
 					-MaxApertureAtMinFocal='$max_aperture' \
 					-MaxApertureValue='$max_aperture' \
 					-MaxFocalLength='$focal_length' \
 					-MinFocalLength='$focal_length' \
-               "
-   ;;
+					"
+	;;
 
-   'Micro-Nikkor 105 mm f/4 AIS')
-	  focal_length='105'
+	'Micro-Nikkor 105 mm f/4 AIS')
+		focal_length='105'
 		max_aperture='4.0'
-      lens_params="\
+		lens_params="\
 					-AFAperture='$max_aperture' \
-                  -DNGLensInfo='$lens_name' \
+					-DNGLensInfo='$lens_name' \
 					-EffectiveMaxAperture='$max_aperture' \
 					-FocalLength='$focal_length' \
-                  -Lens='$lens_name' \
-                  -LensFStops='6.00' \
-                  -LensInfo='$lens_name' \
-                  -LensModel='$lens_name' \
-                  -LensType='MF' \
+					-Lens='$lens_name' \
+					-LensFStops='6.00' \
+					-LensInfo='$lens_name' \
+					-LensModel='$lens_name' \
+					-LensType='MF' \
 					-MaxApertureAtMaxFocal='$max_aperture' \
 					-MaxApertureAtMinFocal='$max_aperture' \
 					-MaxApertureValue='$max_aperture' \
 					-MaxFocalLength='$focal_length' \
 					-MinFocalLength='$focal_length' \
-                  "
-   ;;
+					"
+	;;
 
-   'Nikkor 135 mm f/2.0 AI')
-   focal_length='135'
+ 	'Nikkor 135 mm f/2.0 AI')
+		focal_length='135'
 		max_aperture='2.0'
-   lens_params="\
+		lens_params="\
 					-AFAperture='$max_aperture' \
-               -DNGLensInfo='$lens_name' \
+					-DNGLensInfo='$lens_name' \
 					-EffectiveMaxAperture='$max_aperture' \
 					-FocalLength='$focal_length' \
-               -Lens='$lens_name' \
-               -LensFStops='7.00' \
-               -LensInfo='$lens_name' \
-               -LensModel='$lens_name' \
-               -LensType='MF' \
+					-Lens='$lens_name' \
+					-LensFStops='7.00' \
+					-LensInfo='$lens_name' \
+					-LensModel='$lens_name' \
+					-LensType='MF' \
 					-MaxApertureAtMaxFocal='$max_aperture' \
 					-MaxApertureAtMinFocal='$max_aperture' \
 					-MaxApertureValue='$max_aperture' \
 					-MaxFocalLength='$focal_length' \
 					-MinFocalLength='$focal_length' \
-               "
-   ;;
+					"
+ 	;;
 
-   'Nikkor 200 mm f/4.0 AI')
-   focal_length='200'
+	'Nikkor 200 mm f/4.0 AI')
+		focal_length='200'
 		max_aperture='4.0'
-   lens_params="\
+		lens_params="\
 					-AFAperture='$max_aperture' \
-               -DNGLensInfo='$lens_name' \
+					-DNGLensInfo='$lens_name' \
 					-EffectiveMaxAperture='$max_aperture' \
 					-FocalLength='$focal_length' \
-               -Lens='$lens_name' \
-               -LensFStops='6.00' \
-               -LensInfo='$lens_name' \
-               -LensModel='$lens_name' \
-               -LensType='MF' \
+					-Lens='$lens_name' \
+					-LensFStops='6.00' \
+					-LensInfo='$lens_name' \
+					-LensModel='$lens_name' \
+					-LensType='MF' \
 					-MaxApertureAtMaxFocal='$max_aperture' \
 					-MaxApertureAtMinFocal='$max_aperture' \
 					-MaxApertureValue='$max_aperture' \
 					-MaxFocalLength='$focal_length' \
 					-MinFocalLength='$focal_length' \
-               "
-   ;;
+					"
+	;;
 
-   'Nikkor 400 mm f/5.6 ED-IF')
-   focal_length='400'
+	'Nikkor 400 mm f/5.6 ED-IF')
+		focal_length='400'
 		max_aperture='5.6'
-   lens_params="\
+		lens_params="\
 					-AFAperture='$max_aperture' \
-               -DNGLensInfo='$lens_name' \
+					-DNGLensInfo='$lens_name' \
 					-EffectiveMaxAperture='$max_aperture' \
 					-FocalLength='$focal_length' \
-               -Lens='$lens_name' \
-               -LensFStops='5.00' \
-               -LensInfo='$lens_name' \
-               -LensModel='$lens_name' \
-               -LensType='MF' \
+					-Lens='$lens_name' \
+					-LensFStops='5.00' \
+					-LensInfo='$lens_name' \
+					-LensModel='$lens_name' \
+					-LensType='MF' \
 					-MaxApertureAtMaxFocal='$max_aperture' \
 					-MaxApertureAtMinFocal='$max_aperture' \
 					-MaxApertureValue='$max_aperture' \
 					-MaxFocalLength='$focal_length' \
 					-MinFocalLength='$focal_length' \
-               "
-   ;;
+					"
+	;;
 
-   'Nikkor 50-135 mm f/3.5 AIS')
+	'Nikkor 50-135 mm f/3.5 AIS')
 		focal_length_min='50'
 		focal_length_max='135'
 		max_aperture_at_min_fl='3.5'
 		max_aperture_at_max_fl='3.5'
-      lens_params="\
+		lens_params="\
 					-AFAperture='$max_aperture_at_min_fl' \
-               -DNGLensInfo='$lens_name' \
+					-DNGLensInfo='$lens_name' \
 					-EffectiveMaxAperture='$max_aperture_at_max_fl' \
 					-FocalLength='$focal_length_min' \
-               -Lens='$lens_name' \
-               -LensFStops='6.33' \
-               -LensInfo='$lens_name' \
-               -LensModel='$lens_name' \
-               -LensType='MF' \
+					-Lens='$lens_name' \
+					-LensFStops='6.33' \
+					-LensInfo='$lens_name' \
+					-LensModel='$lens_name' \
+					-LensType='MF' \
 					-MaxApertureAtMaxFocal='$max_aperture_at_max_fl' \
 					-MaxApertureAtMinFocal='$max_aperture_at_min_fl' \
 					-MaxApertureValue='$max_aperture_min_fl' \
 					-MaxFocalLength='$focal_length_max' \
 					-MinFocalLength='$focal_length_min' \
 					-LensSpecification='$focal_length_min, $focal_length_max, $max_aperture_at_min_fl, $max_aperture_at_max_fl' \
-               -LensID='$lens_name' \
-               -AutoFocus='Off' \
-               -DepthOfField='' \
-               -HyperfocalDistance='' \
-               -ExitPupilPosition='0' \
-               -FieldOfView='' \
-               -FocusMode='Manual' \
-               -LensIDNumber='0' \
-               -PhaseDetectAF='Off' \
-               "
-   ;;
+					-LensID='$lens_name' \
+					-AutoFocus='Off' \
+					-DepthOfField='' \
+					-HyperfocalDistance='' \
+					-ExitPupilPosition='0' \
+					-FieldOfView='' \
+					-FocusMode='Manual' \
+					-LensIDNumber='0' \
+					-PhaseDetectAF='Off' \
+					"
+	;;
 
-   'Nikon 75-150 mm f/3.5 Series E')
+	'Nikon 75-150 mm f/3.5 Series E')
 		focal_length_min='75'
 		focal_length_max='150'
 		max_aperture_at_min_fl='3.5'
 		max_aperture_at_max_fl='3.5'
-      lens_params="\
+		lens_params="\
 					-AFAperture='$max_aperture_at_min_fl' \
-               -DNGLensInfo='$lens_name' \
+					-DNGLensInfo='$lens_name' \
 					-EffectiveMaxAperture='$max_aperture_at_max_fl' \
 					-FocalLength='$focal_length_min' \
-               -Lens='$lens_name' \
-               -LensFStops='6.33' \
-               -LensInfo='$lens_name' \
-               -LensModel='$lens_name' \
-               -LensType='MF' \
+					-Lens='$lens_name' \
+					-LensFStops='6.33' \
+					-LensInfo='$lens_name' \
+					-LensModel='$lens_name' \
+					-LensType='MF' \
 					-MaxApertureAtMaxFocal='$max_aperture_at_max_fl' \
 					-MaxApertureAtMinFocal='$max_aperture_at_min_fl' \
 					-MaxApertureValue='$max_aperture_at_min_fl' \
 					-MaxFocalLength='$focal_length_max' \
 					-MinFocalLength='$focal_length_min' \
-               "
-   ;;
+					"
+	;;
 
-   'Vivitar Series 1 28-90 mm f/2.8-3.5')
+	'Vivitar Series 1 28-90 mm f/2.8-3.5')
 		focal_length_min='28'
 		focal_length_max='90'
 		max_aperture_at_min_fl='2.8'
 		max_aperture_at_max_fl='3.5'
-   lens_params="\
+		lens_params="\
 					-AFAperture='$max_aperture_at_min_fl' \
-               -DNGLensInfo='$lens_name' \
+					-DNGLensInfo='$lens_name' \
 					-EffectiveMaxAperture='$max_aperture_at_max_fl' \
 					-FocalLength='$focal_length_min' \
-               -Lens='$lens_name' \
-               -LensFStops='5.00' \
-               -LensInfo='$lens_name' \
-               -LensModel='$lens_name' \
-               -LensType='MF' \
+					-Lens='$lens_name' \
+					-LensFStops='5.00' \
+					-LensInfo='$lens_name' \
+					-LensModel='$lens_name' \
+					-LensType='MF' \
 					-MaxApertureAtMaxFocal='$max_aperture_at_max_fl' \
 					-MaxApertureAtMinFocal='$max_aperture_at_min_fl' \
 					-MaxApertureValue='$max_aperture_at_min_fl' \
 					-MaxFocalLength='$focal_length_max' \
 					-MinFocalLength='$focal_length_min' \
-               "
-   ;;
+					"
+	;;
 
 
 
-  # old lenses I no longer have:
+	# old lenses I no longer have:
 
-   'Nikkor 28 mm f/2.0 AIS')
-	  focal_length='28'
+	'Nikkor 28 mm f/2.0 AIS')
+		focal_length='28'
 		max_aperture='2.0'
-      lens_params="\
+		lens_params="\
 					-AFAperture='$max_aperture' \
-              -DNGLensInfo='$lens_name' \
+					-DNGLensInfo='$lens_name' \
 					-EffectiveMaxAperture='$max_aperture' \
 					-FocalLength='$focal_length' \
-              -Lens='$lens_name' \
-              -LensFStops='7.00' \
-              -LensInfo='$lens_name' \
-              -LensModel='$lens_name' \
-              -LensType='MF' \
+					-Lens='$lens_name' \
+					-LensFStops='7.00' \
+					-LensInfo='$lens_name' \
+					-LensModel='$lens_name' \
+					-LensType='MF' \
 					-MaxApertureAtMaxFocal='$max_aperture' \
 					-MaxApertureAtMinFocal='$max_aperture' \
 					-MaxApertureValue='$max_aperture' \
 					-MaxFocalLength='$focal_length' \
 					-MinFocalLength='$focal_length' \
-               "
-   ;;
+					"
+	;;
 
-   'Nikkor H Auto 28 mm f/3.5')
-	  focal_length='28'
+	'Nikkor H Auto 28 mm f/3.5')
+		focal_length='28'
 		max_aperture='3.5'
-      lens_params="\
+		lens_params="\
 					-AFAperture='$max_aperture' \
-              -DNGLensInfo='$lens_name' \
+					-DNGLensInfo='$lens_name' \
 					-EffectiveMaxAperture='$max_aperture' \
 					-FocalLength='$focal_length' \
-              -Lens='$lens_name' \
-              -LensFStops='4.33' \
-              -LensInfo='$lens_name' \
-              -LensModel='$lens_name' \
-              -LensType='MF' \
+					-Lens='$lens_name' \
+					-LensFStops='4.33' \
+					-LensInfo='$lens_name' \
+					-LensModel='$lens_name' \
+					-LensType='MF' \
 					-MaxApertureAtMaxFocal='$max_aperture' \
 					-MaxApertureAtMinFocal='$max_aperture' \
 					-MaxApertureValue='$max_aperture' \
 					-MaxFocalLength='$focal_length' \
 					-MinFocalLength='$focal_length' \
-               "
-   ;;
+					"
+	;;
 
 
 esac
@@ -1142,7 +1142,7 @@ do
 		focalLength35mmParam="-FocalLengthIn35mmFormat='$focalLength35mm'"
 	fi
 
-    cmd="exiftool -overwrite_original $lens_params $focalLength35mmParam \"$file\""
+	cmd="exiftool -overwrite_original $lens_params $focalLength35mmParam \"$file\""
 
 	# update the EXIF info in file(s)
 	RESULT="$RESULT $file = $(eval $cmd)\n"
@@ -1184,11 +1184,11 @@ SOUND="Hero"
 # Show notification
 if true
 then
-if type terminal-notifier &gt; /dev/null
-then
-   terminal-notifier -message "$MESSAGE_TEXT" -title "$TITLE_TEXT" -subtitle "$SUBTITLE_TEXT" -sound "$SOUND" -sender "com.apple.automator.EXIF Lens Chooser"
-else
-	osascript -e "display notification \"$MESSAGE_TEXT\" with title \"$TITLE_TEXT\" subtitle \"$SUBTITLE_TEXT\" sound name \"$SOUND\" "
+	if type terminal-notifier &gt; /dev/null
+	then
+   	terminal-notifier -message "$MESSAGE_TEXT" -title "$TITLE_TEXT" -subtitle "$SUBTITLE_TEXT" -sound "$SOUND" -sender "com.apple.automator.EXIF Lens Chooser"
+	else
+		osascript -e "display notification \"$MESSAGE_TEXT\" with title \"$TITLE_TEXT\" subtitle \"$SUBTITLE_TEXT\" sound name \"$SOUND\" "
 	fi
 fi
 
