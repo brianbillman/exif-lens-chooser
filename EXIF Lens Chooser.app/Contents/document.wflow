@@ -203,9 +203,9 @@
 					<dict>
 						<key>default value</key>
 						<string>on run {input, parameters}
-	
+
 	(* Your script goes here *)
-	
+
 	return input
 end run</string>
 						<key>name</key>
@@ -535,9 +535,9 @@ end run</string>
 					<dict>
 						<key>default value</key>
 						<string>on run {input, parameters}
-	
+
 	(* Your script goes here *)
-	
+
 	return input
 end run</string>
 						<key>name</key>
@@ -732,7 +732,7 @@ shift
 lens_params=""
 focal_length=""
 
-case "$lens_name" in 
+case "$lens_name" in
    'Nikkor 28 mm f/2.8 AIS')
 	  focal_length='28'
       lens_params="\
@@ -932,7 +932,7 @@ case "$lens_name" in
                -MinFocalLength='400' \
                "
    ;;
-   
+
    'Nikkor 50-135 mm f/3.5 AIS')
       lens_params="\
                -AFAperture='3.5' \
@@ -1052,23 +1052,23 @@ function calc35mmFocalLength()
 {
 	local fileName="$1"
 	local focalLength="$2"
-	
+
 	local camera=$(exiftool -Model "$fileName" | cut -d : -f 2 | sed 's/^ *//')
-	
-	case "$camera" in 
-		
+
+	case "$camera" in
+
 	    'NIKON D70S' | 'NIKON D300' | 'NIKON D7000' | 'NIKON D7100')
 			local conversionFactor='1.5'
 	    ;;
-		
+
 	    'NIKON D700' | 'NIKON D3' | 'NIKON D3S' | 'NIKON D600' | 'NIKON D610' | 'NIKON D800' | 'NIKON D800E' | 'NIKON DF' | 'NIKON D810' | 'NIKON D750')
 			local conversionFactor='1.0'
 	    ;;
-		
+
 	esac
-	
+
 	local focalLength35mm=$(echo "$conversionFactor * $focalLength" | bc -l)
-	
+
 	echo $focalLength35mm
 }
 
@@ -1085,9 +1085,9 @@ do
 		focalLength35mm=$(calc35mmFocalLength "$file" "$focal_length" )
 		focalLength35mmParam="-FocalLengthIn35mmFormat='$focalLength35mm'"
 	fi
-	
+
     cmd="exiftool -overwrite_original $lens_params $focalLength35mmParam \"$file\""
-	
+
 	# update the EXIF info in file(s)
 	RESULT="$RESULT $file = $(eval $cmd)\n"
 done
@@ -1129,7 +1129,7 @@ SOUND="Hero"
 
 if type terminal-notifier &gt; /dev/null
 then
-  
+
    terminal-notifier -message "$MESSAGE_TEXT" -title "$TITLE_TEXT" -subtitle "$SUBTITLE_TEXT" -sound "$SOUND" -sender "com.apple.automator.EXIF Lens Chooser"
 
 else
