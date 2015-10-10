@@ -167,7 +167,7 @@
 					<key>source</key>
 					<string>on run {parameters}
 
-	set lens_selection to choose from list {"Nikkor 28 mm f/2.8 AIS", "Vivitar 28 mm f/2.0 MC Close Focus", "Nikkor-O Auto 35 mm f/2.0", "Nikon 50 mm f/1.8 Series E", "Nikkor 50 mm f/2.0", "Micro-Nikkor Auto 55 mm f/3.5", "Micro-Nikkor 55 mm f/3.5 AI", "Nikkor 105 mm f/2.5 AI", "Micro-Nikkor 105 mm f/4 AIS", "Nikkor 135 mm f/2.0 AI", "Nikkor 200 mm f/4.0 AI", "Nikkor 400 mm f/5.6 ED-IF", "Nikkor 50-135 mm f/3.5 AIS", "Nikon 75-150 mm f/3.5 Series E", "Vivitar Series 1 28-90 mm f/2.8-3.5", "Nikkor 28 mm f/2.0 AIS", "Nikkor H Auto 28 mm f/3.5"} with prompt "Select Lens:"
+	set lens_selection to choose from list {"Nikkor 28 mm f/2.8 AIS", "Vivitar 28 mm f/2.0 MC Close Focus", "Nikkor-N·C Auto 35 mm f/1.4", Nikkor-O Auto 35 mm f/2.0", "Nikon 50 mm f/1.8 Series E", "Nikkor 50 mm f/2.0", "Micro-Nikkor Auto 55 mm f/3.5", "Micro-Nikkor 55 mm f/3.5 AI", "Nikkor 105 mm f/2.5 AI", "Micro-Nikkor 105 mm f/4 AIS", "Nikkor 135 mm f/2.0 AI", "Nikkor 200 mm f/4.0 AI", "Nikkor 400 mm f/5.6 ED-IF", "Nikkor 50-135 mm f/3.5 AIS", "Nikon 75-150 mm f/3.5 Series E", "Vivitar Series 1 28-90 mm f/2.8-3.5", "Nikkor 28 mm f/2.0 AIS", "Nikkor H Auto 28 mm f/3.5"} with prompt "Select Lens:"
 
 	return lens_selection
 end run</string>
@@ -795,6 +795,27 @@ case "$lens_name" in
 					-MinFocalLength='$focal_length' \
       			"
 	;;
+
+   'Nikkor-N·C Auto 35 mm f/1.4')
+      focal_length='35'
+      max_aperture='1.4'
+      lens_params="\
+               -AFAperture='$max_aperture' \
+               -DNGLensInfo='$lens_name' \
+               -EffectiveMaxAperture='$max_aperture' \
+               -FocalLength='$focal_length' \
+               -Lens='$lens_name' \
+               -LensFStops='8.00' \
+               -LensInfo='$lens_name' \
+               -LensModel='$lens_name' \
+               -LensType='MF' \
+               -MaxApertureAtMaxFocal='$max_aperture' \
+               -MaxApertureAtMinFocal='$max_aperture' \
+               -MaxApertureValue='$max_aperture' \
+               -MaxFocalLength='$focal_length' \
+               -MinFocalLength='$focal_length' \
+               "
+   ;;
 
 	'Nikkor-O Auto 35 mm f/2.0')
 		focal_length='35'
