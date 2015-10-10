@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>AMApplicationBuild</key>
-	<string>381</string>
+	<string>409.2</string>
 	<key>AMApplicationVersion</key>
-	<string>2.4</string>
+	<string>2.5</string>
 	<key>AMDocumentVersion</key>
 	<string>2</string>
 	<key>actions</key>
@@ -115,7 +115,7 @@
 				<key>isViewVisible</key>
 				<false/>
 				<key>location</key>
-				<string>632.500000:1036.000000</string>
+				<string>641.500000:112.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Set Value of Variable.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -165,12 +165,7 @@
 				<key>ActionParameters</key>
 				<dict>
 					<key>source</key>
-					<string>on run {parameters}
-
-	set lens_selection to choose from list {"Nikkor 28 mm f/2.8 AIS", "Vivitar 28 mm f/2.0 MC Close Focus", "Nikkor-N·C Auto 35 mm f/1.4", Nikkor-O Auto 35 mm f/2.0", "Nikon 50 mm f/1.8 Series E", "Nikkor 50 mm f/2.0", "Micro-Nikkor Auto 55 mm f/3.5", "Micro-Nikkor 55 mm f/3.5 AI", "Nikkor 105 mm f/2.5 AI", "Micro-Nikkor 105 mm f/4 AIS", "Nikkor 135 mm f/2.0 AI", "Nikkor 200 mm f/4.0 AI", "Nikkor 400 mm f/5.6 ED-IF", "Nikkor 50-135 mm f/3.5 AIS", "Nikon 75-150 mm f/3.5 Series E", "Vivitar Series 1 28-90 mm f/2.8-3.5", "Nikkor 28 mm f/2.0 AIS", "Nikkor H Auto 28 mm f/3.5"} with prompt "Select Lens:"
-
-	return lens_selection
-end run</string>
+					<string>on run {parameters}	set lens_selection to choose from list {"Nikkor 28 mm f/2.8 AIS", "Vivitar 28 mm f/2.0 MC Close Focus", "Nikkor-N·C Auto 35 mm f/1.4", "Nikkor-O Auto 35 mm f/2.0", "Nikon 50 mm f/1.8 Series E", "Nikkor 50 mm f/2.0", "Micro-Nikkor Auto 55 mm f/3.5", "Micro-Nikkor 55 mm f/3.5 AI", "Nikkor 105 mm f/2.5 AI", "Micro-Nikkor 105 mm f/4 AIS", "Nikkor 135 mm f/2.0 AI", "Nikkor 200 mm f/4.0 AI", "Nikkor 400 mm f/5.6 ED-IF", "Nikkor 50-135 mm f/3.5 AIS", "Nikon 75-150 mm f/3.5 Series E", "Vivitar Series 1 28-90 mm f/2.8-3.5", "Nikkor 28 mm f/2.0 AIS", "Nikkor H Auto 28 mm f/3.5"} with prompt "Select Lens:"	return lens_selectionend run</string>
 				</dict>
 				<key>BundleIdentifier</key>
 				<string>com.apple.Automator.RunScript</string>
@@ -208,9 +203,9 @@ end run</string>
 					<dict>
 						<key>default value</key>
 						<string>on run {input, parameters}
-
+	
 	(* Your script goes here *)
-
+	
 	return input
 end run</string>
 						<key>name</key>
@@ -226,9 +221,9 @@ end run</string>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>632.500000:994.000000</string>
+				<string>641.500000:358.000000</string>
 				<key>nibPath</key>
-				<string>/System/Library/Automator/Run AppleScript.action/Contents/Resources/English.lproj/main.nib</string>
+				<string>/System/Library/Automator/Run AppleScript.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
 			<key>isViewVisible</key>
 			<true/>
@@ -338,7 +333,7 @@ end run</string>
 				<key>isViewVisible</key>
 				<false/>
 				<key>location</key>
-				<string>632.500000:681.000000</string>
+				<string>641.500000:400.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Set Value of Variable.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -381,11 +376,9 @@ end run</string>
 				<dict>
 					<key>Container</key>
 					<string>List</string>
-					<key>Optional</key>
-					<true/>
 					<key>Types</key>
 					<array>
-						<string>com.apple.applescript.object</string>
+						<string>*</string>
 					</array>
 				</dict>
 				<key>AMRequiredResources</key>
@@ -454,7 +447,7 @@ end run</string>
 				<key>isViewVisible</key>
 				<false/>
 				<key>location</key>
-				<string>632.500000:639.000000</string>
+				<string>641.500000:442.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Get Value of Variable.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -502,13 +495,7 @@ end run</string>
 				<key>ActionParameters</key>
 				<dict>
 					<key>source</key>
-					<string>on run {input, parameters}
-	if input is {false} then
-		tell me to quit
-	else
-		return input
-	end if
-end run</string>
+					<string>on run {input, parameters}	if input is {false} then		tell me to quit	else		return input	end ifend run</string>
 				</dict>
 				<key>BundleIdentifier</key>
 				<string>com.apple.Automator.RunScript</string>
@@ -546,9 +533,9 @@ end run</string>
 					<dict>
 						<key>default value</key>
 						<string>on run {input, parameters}
-
+	
 	(* Your script goes here *)
-
+	
 	return input
 end run</string>
 						<key>name</key>
@@ -564,9 +551,9 @@ end run</string>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>632.500000:597.000000</string>
+				<string>641.500000:688.000000</string>
 				<key>nibPath</key>
-				<string>/System/Library/Automator/Run AppleScript.action/Contents/Resources/English.lproj/main.nib</string>
+				<string>/System/Library/Automator/Run AppleScript.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
 			<key>isViewVisible</key>
 			<true/>
@@ -607,11 +594,9 @@ end run</string>
 				<dict>
 					<key>Container</key>
 					<string>List</string>
-					<key>Optional</key>
-					<true/>
 					<key>Types</key>
 					<array>
-						<string>com.apple.cocoa.string</string>
+						<string>*</string>
 					</array>
 				</dict>
 				<key>AMRequiredResources</key>
@@ -678,7 +663,7 @@ end run</string>
 				<key>isViewVisible</key>
 				<false/>
 				<key>location</key>
-				<string>632.500000:104.000000</string>
+				<string>641.500000:730.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Get Value of Variable.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -1368,59 +1353,59 @@ fi
 					</dict>
 				</dict>
 				<key>isViewVisible</key>
-				<false/>
+				<true/>
 				<key>location</key>
-				<string>632.500000:62.000000</string>
+				<string>641.500000:1031.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Run Shell Script.action/Contents/Resources/English.lproj/main.nib</string>
 			</dict>
 			<key>isViewVisible</key>
-			<false/>
+			<true/>
 		</dict>
 	</array>
 	<key>connectors</key>
 	<dict>
-		<key>04070280-0E15-40AA-B753-2C5C63A680FA</key>
+		<key>4A2B64B2-459E-4682-BD55-BF8FBD849C29</key>
+		<dict>
+			<key>from</key>
+			<string>FA1E1CAC-5FB0-4282-96D9-C45993D3B1A3 - FA1E1CAC-5FB0-4282-96D9-C45993D3B1A3</string>
+			<key>to</key>
+			<string>FDD69353-BC0C-4E6D-B062-05B5ABF78DB3 - FDD69353-BC0C-4E6D-B062-05B5ABF78DB3</string>
+		</dict>
+		<key>6171306A-C9EA-432D-A781-7BCB2EFA51D5</key>
 		<dict>
 			<key>from</key>
 			<string>40BF3D24-F96B-4812-BA3F-91B1530AE9A4 - 40BF3D24-F96B-4812-BA3F-91B1530AE9A4</string>
 			<key>to</key>
 			<string>FA1E1CAC-5FB0-4282-96D9-C45993D3B1A3 - FA1E1CAC-5FB0-4282-96D9-C45993D3B1A3</string>
 		</dict>
-		<key>0F7837D8-6D80-4431-86CE-EF3953CA4CFB</key>
+		<key>B8569DD5-A591-4BF4-9D73-976B845ACD2A</key>
 		<dict>
 			<key>from</key>
 			<string>612FE2A8-68FB-417E-AE52-28BD5D88CA84 - 612FE2A8-68FB-417E-AE52-28BD5D88CA84</string>
 			<key>to</key>
 			<string>40BF3D24-F96B-4812-BA3F-91B1530AE9A4 - 40BF3D24-F96B-4812-BA3F-91B1530AE9A4</string>
 		</dict>
-		<key>4147F90F-24C5-4B85-8337-96AABF93F674</key>
-		<dict>
-			<key>from</key>
-			<string>C8C61272-C9A1-458E-B91E-A09FBDD32C3F - C8C61272-C9A1-458E-B91E-A09FBDD32C3F</string>
-			<key>to</key>
-			<string>612FE2A8-68FB-417E-AE52-28BD5D88CA84 - 612FE2A8-68FB-417E-AE52-28BD5D88CA84</string>
-		</dict>
-		<key>469BAF49-E94C-4515-A52C-D0BAD0462A89</key>
-		<dict>
-			<key>from</key>
-			<string>D373FFFE-0740-4ABD-8E3E-27837B542E91 - D373FFFE-0740-4ABD-8E3E-27837B542E91</string>
-			<key>to</key>
-			<string>C8C61272-C9A1-458E-B91E-A09FBDD32C3F - C8C61272-C9A1-458E-B91E-A09FBDD32C3F</string>
-		</dict>
-		<key>56C6CAD4-C926-4DD5-A8AB-3609A1C9A1EE</key>
+		<key>B8CD2BA5-26BC-44FB-A396-8F1BC43C2554</key>
 		<dict>
 			<key>from</key>
 			<string>C91DB5E4-09B3-41C7-8487-6B4CD67A3D90 - C91DB5E4-09B3-41C7-8487-6B4CD67A3D90</string>
 			<key>to</key>
 			<string>D373FFFE-0740-4ABD-8E3E-27837B542E91 - D373FFFE-0740-4ABD-8E3E-27837B542E91</string>
 		</dict>
-		<key>B58B13D3-EDFE-4652-ABCF-D599E4B78BE5</key>
+		<key>DBC77D44-C5FE-4F7E-BBDB-A0D4D6C4F7DA</key>
 		<dict>
 			<key>from</key>
-			<string>FA1E1CAC-5FB0-4282-96D9-C45993D3B1A3 - FA1E1CAC-5FB0-4282-96D9-C45993D3B1A3</string>
+			<string>D373FFFE-0740-4ABD-8E3E-27837B542E91 - D373FFFE-0740-4ABD-8E3E-27837B542E91</string>
 			<key>to</key>
-			<string>FDD69353-BC0C-4E6D-B062-05B5ABF78DB3 - FDD69353-BC0C-4E6D-B062-05B5ABF78DB3</string>
+			<string>C8C61272-C9A1-458E-B91E-A09FBDD32C3F - C8C61272-C9A1-458E-B91E-A09FBDD32C3F</string>
+		</dict>
+		<key>FDFA2B9D-0633-421B-BB6E-02D0BDDB8758</key>
+		<dict>
+			<key>from</key>
+			<string>C8C61272-C9A1-458E-B91E-A09FBDD32C3F - C8C61272-C9A1-458E-B91E-A09FBDD32C3F</string>
+			<key>to</key>
+			<string>612FE2A8-68FB-417E-AE52-28BD5D88CA84 - 612FE2A8-68FB-417E-AE52-28BD5D88CA84</string>
 		</dict>
 	</dict>
 	<key>variables</key>
