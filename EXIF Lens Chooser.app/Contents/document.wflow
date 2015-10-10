@@ -1168,7 +1168,7 @@ function calc35mmFocalLength()
 
 	case "$camera" in
 
-	    'NIKON D70S' | 'NIKON D300' | 'NIKON D7000' | 'NIKON D7100')
+	    'NIKON D70S' | 'NIKON D300' | 'NIKON D7000' | 'NIKON D7100' | 'NIKON D7200')
 			local conversionFactor='1.5'
 	    ;;
 
