@@ -98,8 +98,8 @@ case "$lens_name" in
                 -MaxFocalLength='$focal_length' \
                 -MinFocalLength='$focal_length' \
                 "
-    ;;	
-	
+    ;;
+
    'Nikkor 28 mm f/2.8 AIS')
       focal_length='28'
       max_aperture='2.8'
@@ -545,7 +545,6 @@ esac
 
 #######################
 
-
 # function to calculate "35mm  Effective Focal Length"
 function calc35mmFocalLength()
 {
@@ -583,6 +582,7 @@ function calc35mmFocalLength()
 # loop over each file
 RESULT=""
 
+
 for file in "$@"
 do
    focalLength35mmParam=""
@@ -596,11 +596,12 @@ do
 
    if [ "$focal_length" != "" ]
    then
-      focalLength35mm=$(calc35mmFocalLength "$file" "$focal_length" )
+      focalLength35mm=$(calc35mmFocalLength "$file" "$focal_length")
       focalLength35mmParam="-FocalLengthIn35mmFormat='$focalLength35mm'"
    fi
 
    cmd="exiftool -overwrite_original $lens_params $focalLength35mmParam \"$file\" 2>&1"
+   cmd="exiftool -overwrite_original $lens_params $focalLength35mmParam $nonNikonParam \"$file\" 2>&1"
 
    # update the EXIF info in file(s)
    RESULT="$RESULT $file = $(eval $cmd)\n"
