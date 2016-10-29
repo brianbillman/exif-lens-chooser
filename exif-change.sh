@@ -548,30 +548,10 @@ esac
 # function to calculate "35mm  Effective Focal Length"
 function calc35mmFocalLength()
 {
+   # Is this already handled automaticlaly by exiftool? May not be necessary...
    local fileName="$1"
    local focalLength="$2"
-
-   local camera=$(exiftool -UniqueCameraModel "$fileName" | cut -d : -f 2 | sed 's/^ *//')
-
-   case "$camera" in
-
-	   # APS-C / DX
-       'Nikon D70S' | 'Nikon D300' | 'Nikon D7000' | 'Nikon D7100' | 'Nikon D7200')
-         local conversionFactor='1.5'
-       ;;
-
-	   # Full Frame
-       'Nikon D700' | 'Nikon D3' | 'Nikon D3S' | 'Nikon D600' | 'Nikon D610' | 'Nikon D800' | 'Nikon D800E' | 'Nikon DF' | 'Nikon D810' | 'Nikon D750')
-         local conversionFactor='1.0'
-       ;;
-	   
-	   # Micro 4/3
-       'Olympus E-M10')
-         local conversionFactor='2.0'
-       ;;
-
-   esac
-
+   local conversionFactor=$(exiftool -ScaleFactor35efl "$fileName" | cut -d : -f 2 | sed 's/^ *//')
    local focalLength35mm=$(echo "$conversionFactor * $focalLength" | bc -l)
 
    echo $focalLength35mm
