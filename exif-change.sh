@@ -580,7 +580,14 @@ do
       focalLength35mmParam="-FocalLengthIn35mmFormat='$focalLength35mm'"
    fi
 
-   cmd="exiftool -overwrite_original $lens_params $focalLength35mmParam \"$file\" 2>&1"
+   # Non-Nikon camera can display weird info for LensID and LensType, so clear it out if not Nikon mount
+   nonNikonParam=""
+   nonNikon=$(exiftool -Make "$file" | cut -d : -f 2 | grep -i -c -v 'Nikon')
+   if [ $nonNikon -gt 0 ]
+   then
+      nonNikonParam="-LensID='0' -LensType='None'"
+   fi
+
    cmd="exiftool -overwrite_original $lens_params $focalLength35mmParam $nonNikonParam \"$file\" 2>&1"
 
    # update the EXIF info in file(s)
