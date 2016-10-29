@@ -7,26 +7,27 @@ PS3='
 Enter choice:'
 
 options=(\
-   "Nikkor-N·C Auto 28 mm f/2.0" \
-   "Nikkor 28 mm f/2.8 AIS" \
-   "Vivitar 28 mm f/2.0 MC Close Focus" \
-   "Nikkor-N·C Auto 35 mm f/1.4" \
-   "Nikkor-O Auto 35 mm f/2.0" \
-   "Nikkor-S Auto 50 mm f/1.4" \
-   "Nikon 50 mm f/1.8 Series E" \
-   "Nikkor 50 mm f/2.0" \
-   "Micro-Nikkor Auto 55 mm f/3.5" \
-   "Micro-Nikkor 55 mm f/3.5 AI" \
-   "Nikkor 105 mm f/2.5 AI" \
-   "Micro-Nikkor 105 mm f/4 AIS" \
-   "Nikkor 135 mm f/2.0 AI" \
-   "Nikkor 200 mm f/4.0 AI" \
-   "Nikkor 400 mm f/5.6 ED-IF" \
-   "Nikkor 50-135 mm f/3.5 AIS" \
-   "Nikon 75-150 mm f/3.5 Series E" \
-   "Vivitar Series 1 28-90 mm f/2.8-3.5" \
-   "Nikkor 28 mm f/2.0 AIS" \
-   "Nikkor H Auto 28 mm f/3.5" \
+   'Nikkor-N·C Auto 28 mm f/2.0' \
+   'Nikkor 28 mm f/2.8 AIS' \
+   'Vivitar 28 mm f/2.0 MC Close Focus' \
+   'Nikkor-N·C Auto 35 mm f/1.4' \
+   'Nikkor-O Auto 35 mm f/2.0' \
+   'Nikkor-S Auto 50 mm f/1.4' \
+   'Nikon 50 mm f/1.8 Series E' \
+   'Nikkor 50 mm f/1.8 AI' \
+   'Nikkor 50 mm f/2.0' \
+   'Micro-Nikkor Auto 55 mm f/3.5' \
+   'Micro-Nikkor 55 mm f/3.5 AI' \
+   'Nikkor 105 mm f/2.5 AI' \
+   'Micro-Nikkor 105 mm f/4 AIS' \
+   'Nikkor 135 mm f/2.0 AI' \
+   'Nikkor 200 mm f/4.0 AI' \
+   'Nikkor 400 mm f/5.6 ED-IF' \
+   'Nikkor 50-135 mm f/3.5 AIS' \
+   'Nikon 75-150 mm f/3.5 Series E' \
+   'Vivitar Series 1 28-90 mm f/2.8-3.5' \
+   'Nikkor 28 mm f/2.0 AIS' \
+   'Nikkor H Auto 28 mm f/3.5' \
 )
 
 lens_name=""
@@ -191,6 +192,27 @@ case "$lens_name" in
    ;;
 
    'Nikon 50 mm f/1.8 Series E')
+      focal_length='50'
+      max_aperture='1.8'
+      lens_params="\
+               -AFAperture='$max_aperture' \
+               -DNGLensInfo='$lens_name' \
+               -EffectiveMaxAperture='$max_aperture' \
+               -FocalLength='$focal_length' \
+               -Lens='$lens_name' \
+               -LensFStops='7.33' \
+               -LensInfo='$lens_name' \
+               -LensModel='$lens_name' \
+               -LensType='MF' \
+               -MaxApertureAtMaxFocal='$max_aperture' \
+               -MaxApertureAtMinFocal='$max_aperture' \
+               -MaxApertureValue='$max_aperture' \
+               -MaxFocalLength='$focal_length' \
+               -MinFocalLength='$focal_length' \
+               "
+   ;;
+
+   'Nikkor 50 mm f/1.8 AI')
       focal_length='50'
       max_aperture='1.8'
       lens_params="\
