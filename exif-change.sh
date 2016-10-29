@@ -1,11 +1,5 @@
 #!/usr/bin/env bash
 
-echo ""
-echo "Lens Options:"
-
-PS3='
-Enter choice:'
-
 options=(\
    'Nikkor-N·C Auto 28 mm f/2.0' \
    'Nikkor 28 mm f/2.8 AIS' \
@@ -30,25 +24,45 @@ options=(\
    'Nikkor H Auto 28 mm f/3.5' \
 )
 
-lens_name=""
+function show_prompt()
+{
+    echo ""
+    echo "Lens Options:"
 
-select opt in "${options[@]}" "Quit"
+    PS3='
+    Enter choice: '
+
+    lens_name=""
+
+    select opt in "${options[@]}"
+    do
+        echo ""
+
+        # if not an integer, <= 0, or > number of options, abort
+        if [ "${REPLY//[0-9]}" != "" ] || [ "$REPLY" -le 0 ] || [ "$REPLY" -gt "${#options[@]}" ]
+        then
+            echo "Enter a valid number from menu above"
+        else
+            lens_name="$opt"
+            break
+        fi
+    done
+
+    echo "    Selected lens: $lens_name"
+    echo ""
+}
+
+show_prompt
+
+while true
 do
-   echo ""
-
-   # if not an integer, <= 0, or > number of options, abort
-   if [ "${REPLY//[0-9]}" != "" ] || [ "$REPLY" -le 0 ] || [ "$REPLY" -gt "${#options[@]}" ]
-   then
-      echo "Quiting"
-      exit 1
-   else
-      lens_name="$opt"
-      break;
-   fi
-
+    read -r -p "    Proceeed with selected lens? (y)es, (n)o, or (q)uit: " choice
+    case "$choice" in
+        y|Y|yes|YES|Yes) break;;
+        n|N|no|NO|No) show_prompt;;
+        q|Q|quit|QUIT|Quit) exit;;
+    esac
 done
-
-echo "Selected lens: $lens_name"
 
 lens_params=''
 
