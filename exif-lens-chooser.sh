@@ -17,11 +17,14 @@ options=(\
    'Nikkor 135 mm f/2.0 AI' \
    'Nikkor 200 mm f/4.0 AI' \
    'Nikkor 400 mm f/5.6 ED-IF' \
+   'Nikkor 25-50 mm f/4.0 AIS' \
+   'Nikkor 28-50 mm f/3.5 AIS' \
    'Nikkor 50-135 mm f/3.5 AIS' \
    'Nikon 75-150 mm f/3.5 Series E' \
    'Vivitar Series 1 28-90 mm f/2.8-3.5' \
    'Nikkor 28 mm f/2.0 AIS' \
    'Nikkor H Auto 28 mm f/3.5' \
+   'Olympus 9 mm f/8 Fisheye Body Cap Lens' \
 )
 
 function show_prompt()
@@ -415,6 +418,52 @@ case "$lens_name" in
                "
    ;;
 
+   'Nikkor 25-50 mm f/4.0 AIS')
+      focal_length_min='25'
+      focal_length_max='50'
+      max_aperture_at_min_fl='4.0'
+      max_aperture_at_max_fl='4.0'
+      lens_params="\
+               -AFAperture='$max_aperture_at_min_fl' \
+               -DNGLensInfo='$lens_name' \
+               -EffectiveMaxAperture='$max_aperture_at_max_fl' \
+               -FocalLength='$focal_length_min' \
+               -Lens='$lens_name' \
+               -LensFStops='5' \
+               -LensInfo='$lens_name' \
+               -LensModel='$lens_name' \
+               -LensType='MF' \
+               -MaxApertureAtMaxFocal='$max_aperture_at_max_fl' \
+               -MaxApertureAtMinFocal='$max_aperture_at_min_fl' \
+               -MaxApertureValue='$max_aperture_at_min_fl' \
+               -MaxFocalLength='$focal_length_max' \
+               -MinFocalLength='$focal_length_min' \
+               "
+   ;;
+
+   'Nikkor 28-50 mm f/3.5 AIS')
+	   focal_length_min='28'
+	   focal_length_max='50'
+	   max_aperture_at_min_fl='3.5'
+	   max_aperture_at_max_fl='3.5'
+	   lens_params="\
+	            -AFAperture='$max_aperture_at_min_fl' \
+	            -DNGLensInfo='$lens_name' \
+	            -EffectiveMaxAperture='$max_aperture_at_max_fl' \
+	            -FocalLength='$focal_length_min' \
+	            -Lens='$lens_name' \
+	            -LensFStops='5.33' \
+	            -LensInfo='$lens_name' \
+	            -LensModel='$lens_name' \
+	            -LensType='MF' \
+	            -MaxApertureAtMaxFocal='$max_aperture_at_max_fl' \
+	            -MaxApertureAtMinFocal='$max_aperture_at_min_fl' \
+	            -MaxApertureValue='$max_aperture_at_min_fl' \
+	            -MaxFocalLength='$focal_length_max' \
+	            -MinFocalLength='$focal_length_min' \
+	            "
+   ;;
+
    'Nikkor 50-135 mm f/3.5 AIS')
       focal_length_min='50'
       focal_length_max='135'
@@ -537,6 +586,29 @@ case "$lens_name" in
                -MaxApertureValue='$max_aperture' \
                -MaxFocalLength='$focal_length' \
                -MinFocalLength='$focal_length' \
+               "
+   ;;
+
+   'Olympus 9 mm f/8 Fisheye Body Cap Lens')
+      focal_length='9'
+      max_aperture='8'
+      lens_params="\
+               -AFAperture='$max_aperture' \
+               -DNGLensInfo='$lens_name' \
+               -EffectiveMaxAperture='$max_aperture' \
+               -FocalLength='$focal_length' \
+               -Lens='$lens_name' \
+               -LensFStops='1' \
+               -LensInfo='$lens_name' \
+               -LensModel='$lens_name' \
+               -LensType='MF' \
+               -MaxApertureAtMaxFocal='$max_aperture' \
+               -MaxApertureAtMinFocal='$max_aperture' \
+               -MaxApertureValue='$max_aperture' \
+               -MaxFocalLength='$focal_length' \
+               -MinFocalLength='$focal_length' \
+               -FNumber='$max_aperture' \
+               -ApertureValue='$max_aperture' \
                "
    ;;
 
