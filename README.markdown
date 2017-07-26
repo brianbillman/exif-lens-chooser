@@ -1,21 +1,31 @@
 # EXIF Lens Chooser
 
-When images are dropped onto the app, a dialog appears with a list of (user defined) lenses.  Select a lens, choose *OK*, and the EXIF data associated with that option will be written into all the dropped image files using [exiftool](http://www.sno.phy.queensu.ca/~phil/exiftool/index.html), which must be installed on the system.  When the processing is complete, a notification with the summary of results is given, and a more detailed text file is created at `~/exif-lens-chooser.txt` if there are any problems.
+When images are passed to the script as arguments, a prompt appears with a list of (user defined) lenses.  Select a lens by entering it's corresponding number, press *Enter*, and the EXIF data associated with that option will be written into all the image files using [exiftool](http://www.sno.phy.queensu.ca/~phil/exiftool/index.html), which must be installed on the system.  When the processing is complete, a notification with the summary of results is given, and a more detailed text file is created at `~/exif-lens-chooser.txt` if there are any problems.
 
 
 ## Prerequisites
 
 Before using this application, you must first download and install [exiftool](http://www.sno.phy.queensu.ca/~phil/exiftool/index.html).
 
-The application also assumes that you are on OS X 10.8 or higher in order to use the built-in notifications.  If you happen to have [terminal-notifier](https://github.com/alloy/terminal-notifier) installed, you will get a slightly better looking notification.
+The application also assumes that you are on OS X 10.8 or higher in order to use the built-in notifications.  If you happen to have [terminal-notifier](https://github.com/alloy/terminal-notifier) installed, you will get a nicer notification.
 
 ## Installation
 
-[Download](https://github.com/brianbillman/exif-lens-chooser/zipball/master) the zip file, and move  *EXIF Lens Chooser.app* to your `/Applications/` directory.
+[Download](https://github.com/brianbillman/exif-lens-chooser/zipball/master) the zip file, and move the *exif-lens-chooser* directory to your `/Applications/` directory, and set proper permissions to make it executable.  It is easiest to then create a symbolic link in `/usr/local/bin/` (assuming it is in your `PATH`) to point to `exif-lens-chooser.sh`), as follows:
+
+```
+# set permissions
+chmod  755 /Applications/exif-lens-chooser/exif-lens-chooser.sh
+
+# create symbolic link to a location on your PATH to run from anywhere
+ln -s /Applications/exif-lens-chooser/exif-lens-chooser.sh /usr/local/bin/exif-lens-chooser.sh
+```
+
+IF you run into permissions issues, you will need to put `sudo` in front of the above commands and enter your Mac's password when prompted.
 
 ## How I Use It
 
-I use Lightroom as my image library.  After importing images into Lightroom, I use the library filters to limit by lens (*0.0mm f/0.0* for photos without a lens defined) and then focal length (since my camera allows me to set partial EXIF information, such as focal length and aperture) and select all the remaining photos.  Then I explicitly save the metadata to the files (*Metadata → Save Metadata to File* or ⌘S), and drag and drop the photos from the Lightroom grid onto the application.  I recommend not editing the selected files in Lightroom before setting the correct lens info.  After files are updated by the app, I select them again (normally they are still selected) and choose *Metadata → Read Metadata from File*.  Lightroom then refreshes the files and you can see the new EXIF info for the selected images.
+I use Lightroom as my image library.  After importing images into Lightroom, I use the library filters to limit by lens (*0.0mm f/0.0* or *Unknown Lens* for photos without a lens defined) and then focal length (since my camera allows me to set partial EXIF information, such as focal length and aperture) and select all the remaining photos.  Then I explicitly save the metadata to the files (*Metadata → Save Metadata to File* or ⌘S).  Next I open Terminal, type out `exif-lens-chooser.sh ` (with a space after it), and drag and drop the photos from the Lightroom grid into the Terminal window.  The full path to all the files will then appear in Terminal, and once it has finished, hit enter to get a prompt to select a lens.  I recommend not editing the selected files in Lightroom before setting the correct lens info.  After thescript finishes, I select them again in Lightroom (normally they are still selected) and choose *Metadata → Read Metadata from File*.  Lightroom then refreshes the files and you can see the new EXIF info for the selected images.  If you have multiple lenses to do this with, you can open multiple Terminal windows, and repeat this process for each lens, so they can run concurrently.
 
 ### Virtual Copies
 
@@ -50,19 +60,13 @@ The new virtual copy should have the updated lens info.
 
 ## How to Customize
 
-Open the app in Automator, and you should see 6 collapsable sections.  The ones to modify are the second and sixth sections.
+Open `exif-lens-chooser.sh` in your favorite text editor.
 
-### Run AppleScript (show prompt for lens selection)
-
- 1. Expand section
- 2. The double quoted values between the `{` and `}` are the items that appear in the list.  The exact list value (each lens name) is used as a unique id that will be referenced later.  Separate each item with a comma, and make sure double quotes surround each item's text.  Add or remove lenses as desired, and the order does not matter.
-
-### Run Shell Script (modify EXIF to files based using exiftool)
- 1. Expand section
- 2. Inside the `case` statement, the lens names in single quotes correspond to the lens names defined in the list in the previous section.  These must match exactly, or else the lens you select from the dialog won't set the correct lens info.
- 3. Edit the values within the `lens_params` string for each lens for what you want to set into the image's EXIF data.  Specific examples are given below for prime and zoom lenses.  The `Lens` value is the description that appears in Lightroom; this can be as generic or as verbose as you'd like.  I decided to make mine an accurate description of the lenses, even if the format doesn't match what's reported for the autofocus/CPU lenses I have.
+ 1. At the top is an `options` array with a list of lens names in it,
+ 2. Inside the `case` statement , the lens names in single quotes correspond to the lens names defined in `options` above.  These must match exactly, or else the lens you select from the dialog won't set the correct lens info.
+ 3. Edit the values underneath the lens name for each lens for what you want to set into the image's EXIF data.  Specific examples are given below for prime and zoom lenses.  The `Lens` value is the description that appears in Lightroom; this can be as generic or as verbose as you'd like.  I decided to make mine an accurate description of the lenses, even if the format doesn't match what's reported for the autofocus/CPU lenses I have.
  4. Additional EXIF fields fields are described in this [exiftool documentation](http://www.sno.phy.queensu.ca/~phil/exiftool/TagNames/EXIF.html).  Some fields of possible interest: `LensMake`, `LensModel`, `LensSerialNumber`.
- 5. Feel free to add or remove lenses as desired, but they need to have a corresponding entry in the earlier *Run AppleScript* section.
+ 5. Feel free to add or remove lenses as desired, but they need to have a corresponding entry in the earlier `options` section.
  6. If you wish to remove the notification, find the `# Show notification` section of code, and change the next line `if true` to `if false`.  In either case, if there are any problems updating a photo, a text file will be created at `~/exif-lens-chooser.txt` for further review.  If there are no issues, the file will not exist.  The file will be be overwritten if it already exists whenever the application is run.
 
 #### Examples
@@ -98,7 +102,7 @@ Here is an example of the code block for a prime and a zoom lens.  The only valu
       ;;
 
 **Zoom lens example:**
-*Note that the minimum focal length (`focal_length_min`) is what will be used as the focal length of the photo (the `FocalLength` field); you can add in `focal_length` to the top of the block and set to whatever value you want if you want a different value used.*
+*Note that the minimum focal length (`focal_length_min`) is what will be used as the focal length of the photo (the `FocalLength` field), since there's no way to know what the actual value used was; you can add in `focal_length` to the top of the block and set to whatever value you want if you want a different value used.*
 
       'Nikon 75-150 mm f/3.5 Series E')
          focal_length_min='75'
@@ -127,19 +131,16 @@ Here is an example of the code block for a prime and a zoom lens.  The only valu
 
 You can see all the EXIF info any image file has by running in Terminal (useful for before/after comparisons to validate your changes, and to compare with other CPU lenses to see what the camera sets for them):
 
-    $ exiftool path/to/file/image.jpg
+```
+$ exiftool path/to/file/image.jpg
+```
 
 If you filter the output to only show certain text, you can run:
 
-    $ exiftool path/to/file/image.jpg | grep -i "TextToFind"
-
-
-## Make it Look Good
-
-Once you have saved the Automator application, why not [change the application's icon](http://superuser.com/questions/37811/how-can-i-change-an-application-icon-in-mac-os-x/37813#37813) with one of these [nice looking options](http://designrshub.com/2012/01/realistic-examples-of-high-quality-camera-lens-icons.html)?
-
-
+```
+$ exiftool path/to/file/image.jpg | grep -i "TextToFind"
+```
 
 ## Other
 
-If you have any ideas for how to improve this app, please create a ticket github issue for it and I'll take a look (or fork it and do it yourself!)
+If you have any ideas for how to improve this, please create a ticket github issue for it and I'll take a look (or fork it and do it yourself!)
