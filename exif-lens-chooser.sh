@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 options=(\
+   'Nikkor 24 mm f/2.0 AI' \
    'Nikkor-N·C Auto 28 mm f/2.0' \
    'Nikkor 28 mm f/2.8 AIS' \
    'Vivitar 28 mm f/2.0 MC Close Focus' \
@@ -82,26 +83,47 @@ max_aperture_at_max_fl=''
 
 case "$lens_name" in
 
-    'Nikkor-N·C Auto 28 mm f/2.0')
-       focal_length='28'
-       max_aperture='2.0'
-       lens_params="\
-                -AFAperture='$max_aperture' \
-                -DNGLensInfo='$lens_name' \
-                -EffectiveMaxAperture='$max_aperture' \
-                -FocalLength='$focal_length' \
-                -Lens='$lens_name' \
-                -LensFStops='7.00' \
-                -LensInfo='$lens_name' \
-                -LensModel='$lens_name' \
-                -LensType='MF' \
-                -MaxApertureAtMaxFocal='$max_aperture' \
-                -MaxApertureAtMinFocal='$max_aperture' \
-                -MaxApertureValue='$max_aperture' \
-                -MaxFocalLength='$focal_length' \
-                -MinFocalLength='$focal_length' \
-                "
-    ;;
+   'Nikkor 24 mm f/2.0 AI')
+      focal_length='24'
+      max_aperture='2.0'
+      lens_params="\
+               -AFAperture='$max_aperture' \
+               -DNGLensInfo='$lens_name' \
+               -EffectiveMaxAperture='$max_aperture' \
+               -FocalLength='$focal_length' \
+               -Lens='$lens_name' \
+               -LensFStops='7.00' \
+               -LensInfo='$lens_name' \
+               -LensModel='$lens_name' \
+               -LensType='MF' \
+               -MaxApertureAtMaxFocal='$max_aperture' \
+               -MaxApertureAtMinFocal='$max_aperture' \
+               -MaxApertureValue='$max_aperture' \
+               -MaxFocalLength='$focal_length' \
+               -MinFocalLength='$focal_length' \
+               "
+   ;;
+
+   'Nikkor-N·C Auto 28 mm f/2.0')
+      focal_length='28'
+      max_aperture='2.0'
+      lens_params="\
+               -AFAperture='$max_aperture' \
+               -DNGLensInfo='$lens_name' \
+               -EffectiveMaxAperture='$max_aperture' \
+               -FocalLength='$focal_length' \
+               -Lens='$lens_name' \
+               -LensFStops='7.00' \
+               -LensInfo='$lens_name' \
+               -LensModel='$lens_name' \
+               -LensType='MF' \
+               -MaxApertureAtMaxFocal='$max_aperture' \
+               -MaxApertureAtMinFocal='$max_aperture' \
+               -MaxApertureValue='$max_aperture' \
+               -MaxFocalLength='$focal_length' \
+               -MinFocalLength='$focal_length' \
+               "
+   ;;
 
    'Nikkor 28 mm f/2.8 AIS')
       focal_length='28'
