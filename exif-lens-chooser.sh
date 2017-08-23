@@ -2,10 +2,10 @@
 
 options=(\
    'Nikkor 24 mm f/2.0 AI' \
-   'Nikkor-N·C Auto 28 mm f/2.0' \
+   'Nikkor-NC Auto 28 mm f/2.0' \
    'Nikkor 28 mm f/2.8 AIS' \
    'Vivitar 28 mm f/2.0 MC Close Focus' \
-   'Nikkor-N·C Auto 35 mm f/1.4' \
+   'Nikkor-NC Auto 35 mm f/1.4' \
    'Nikkor-O Auto 35 mm f/2.0' \
    'Nikkor-S Auto 50 mm f/1.4' \
    'Nikon 50 mm f/1.8 Series E' \
@@ -104,7 +104,7 @@ case "$lens_name" in
                "
    ;;
 
-   'Nikkor-N·C Auto 28 mm f/2.0')
+   'Nikkor-NC Auto 28 mm f/2.0')
       focal_length='28'
       max_aperture='2.0'
       lens_params="\
@@ -167,7 +167,7 @@ case "$lens_name" in
                "
    ;;
 
-   'Nikkor-N·C Auto 35 mm f/1.4')
+   'Nikkor-NC Auto 35 mm f/1.4')
       focal_length='35'
       max_aperture='1.4'
       lens_params="\
