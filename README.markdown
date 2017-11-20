@@ -21,7 +21,7 @@ chmod  755 /Applications/exif-lens-chooser/exif-lens-chooser.sh
 ln -s /Applications/exif-lens-chooser/exif-lens-chooser.sh /usr/local/bin/exif-lens-chooser.sh
 ```
 
-IF you run into permissions issues, you will need to put `sudo` in front of the above commands and enter your Mac's password when prompted.
+If you run into permissions issues, you will need to put `sudo` in front of the above commands and enter your Mac's password when prompted.
 
 ## How I Use It
 
@@ -73,7 +73,7 @@ Open `exif-lens-chooser.sh` in your favorite text editor.
 
 Here is an example of the code block for a prime and a zoom lens.  The only values you should need to change are:
 
-* the name (to match the value from the AppleScript list)
+* the name (to match the value from the list at top of script)
 * the focal length(s)
 * the aperture(s)
 * the number of F-stops between the maximum and minimum aperture of the lens
