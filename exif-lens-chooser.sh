@@ -13,6 +13,7 @@ options=(\
    'Nikkor 50 mm f/2.0' \
    'Micro-Nikkor Auto 55 mm f/3.5' \
    'Micro-Nikkor 55 mm f/3.5 AI' \
+   'Nikkor 105 mm f/1.8 AIS' \
    'Nikkor 105 mm f/2.5 AI' \
    'Micro-Nikkor 105 mm f/4 AIS' \
    'Nikkor 135 mm f/2.0 AI' \
@@ -324,6 +325,27 @@ case "$lens_name" in
                -FocalLength='$focal_length' \
                -Lens='$lens_name' \
                -LensFStops='6.33' \
+               -LensInfo='$lens_name' \
+               -LensModel='$lens_name' \
+               -LensType='MF' \
+               -MaxApertureAtMaxFocal='$max_aperture' \
+               -MaxApertureAtMinFocal='$max_aperture' \
+               -MaxApertureValue='$max_aperture' \
+               -MaxFocalLength='$focal_length' \
+               -MinFocalLength='$focal_length' \
+               "
+   ;;
+
+   'Nikkor 105 mm f/1.8 AIS')
+      focal_length='105'
+      max_aperture='1.8'
+      lens_params="\
+               -AFAperture='$max_aperture' \
+               -DNGLensInfo='$lens_name' \
+               -EffectiveMaxAperture='$max_aperture' \
+               -FocalLength='$focal_length' \
+               -Lens='$lens_name' \
+               -LensFStops='7.33' \
                -LensInfo='$lens_name' \
                -LensModel='$lens_name' \
                -LensType='MF' \
