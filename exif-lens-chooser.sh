@@ -642,7 +642,7 @@ esac
 # function to calculate "35mm  Effective Focal Length"
 function calc35mmFocalLength()
 {
-   # Is this already handled automaticlaly by exiftool? May not be necessary...
+   # Is this already handled automatically by exiftool? May not be necessary...
    local fileName="$1"
    local focalLength="$2"
    local conversionFactor=$(exiftool -ScaleFactor35efl "$fileName" | cut -d : -f 2 | sed 's/^ *//')
